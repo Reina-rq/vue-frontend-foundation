@@ -15,10 +15,10 @@ const breakpoints: Breakpoint[] = [
 </script>
 
 <template>
-  <table class="ds-ref">
+  <table class="table table-sm">
     <tbody>
       <tr v-for="b in breakpoints" :key="b.name">
-        <td>{{ b.name }}</td>
+        <td class="fw-700 text-nowrap w-130">{{ b.name }}</td>
         <td><code>{{ b.min }}</code> — {{ b.device }}</td>
       </tr>
     </tbody>

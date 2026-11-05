@@ -7,8 +7,7 @@ import buttonDemoSrc from '../../demos/componentes-vue/ButtonDemo.vue?raw'
 
 <template>
   <DocSection id="vue-button" title="Button">
-    <template #lead>Props: <code>variant</code> (<code>pri</code> | <code>gho</code>), <code>type</code> (<code>button</code> | <code>submit</code>), <code>disabled</code>.</template>
-    <div class="alert alert-warning">Problema conocido del original: <code>Button</code> emite <code>.btn-pri</code> / <code>.btn-gho</code>, que no existen en el SCSS. Se ve solo con la base <code>.btn</code>. Para el look de marca usa <code>&lt;button class="btn btn-primary"&gt;</code>.</div>
+    <template #lead>Props: <code>variant</code> (<code>primary</code> por defecto, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code>, <code>light</code>, <code>dark</code>, <code>link</code> y sus <code>outline-*</code>), <code>size</code> (<code>sm</code> | <code>lg</code>), <code>type</code> y <code>disabled</code>.</template>
     <DemoBlock :source="buttonDemoSrc"><ButtonDemo /></DemoBlock>
   </DocSection>
 </template>

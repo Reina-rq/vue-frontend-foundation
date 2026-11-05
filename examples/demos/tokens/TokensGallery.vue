@@ -17,10 +17,10 @@ const tokens: TokenSample[] = [
 </script>
 
 <template>
-  <div class="ds-swatches">
-    <div v-for="t in tokens" :key="t.var" class="ds-swatch">
-      <div class="ds-swatch__c" :style="{ background: `var(${t.var})` }"></div>
-      <div class="ds-swatch__l"><b>{{ t.var }}</b><span>{{ t.desc }}</span></div>
+  <div class="grid-auto">
+    <div v-for="t in tokens" :key="t.var" class="swatch">
+      <div class="swatch-color" :style="{ background: `var(${t.var})` }"></div>
+      <div class="swatch-label"><b>{{ t.var }}</b><span>{{ t.desc }}</span></div>
     </div>
   </div>
 </template>

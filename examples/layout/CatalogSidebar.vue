@@ -6,12 +6,12 @@ defineProps<{ groups: CatalogGroup[] }>()
 </script>
 
 <template>
-  <aside class="ds-sidebar">
-    <nav v-for="group in groups" :key="group.title" class="ds-navgroup">
-      <b>{{ group.title }}</b>
-      <a v-for="section in group.sections" :key="section.id" :href="`#${section.id}`">
+  <aside class="sidebar-layout-aside">
+    <nav v-for="group in groups" :key="group.title" class="sidebar-nav">
+      <span class="sidebar-nav-title">{{ group.title }}</span>
+      <a v-for="section in group.sections" :key="section.id" :href="`#${section.id}`" class="sidebar-nav-link">
         {{ section.label }}
-        <span v-if="section.legacy" class="ds-tag">legacy</span>
+        <span v-if="section.legacy" class="badge badge-light">legacy</span>
       </a>
     </nav>
   </aside>

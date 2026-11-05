@@ -33,6 +33,7 @@ Clona, ajusta la marca y empieza a construir: sin librerías visuales externas y
 - [Componentes](#componentes)
 - [Tema y marca](#tema-y-marca)
 - [Estructura del repositorio](#estructura-del-repositorio)
+- [Documentación](#documentación)
 - [Convenciones](#convenciones)
 - [Estado del proyecto](#estado-del-proyecto)
 
@@ -58,6 +59,7 @@ Una base reutilizable para arrancar aplicaciones Vue 3 sin rehacer lo mismo en c
 - **Modo claro y oscuro** con `useTheme()`. El tema se aplica antes del primer render, así que la página no parpadea al cargar.
 - **Grid y utilidades propias:** `.row` / `.col-md-6`, `d-flex`, `gap-*`, `mt-*`, `text-*`, `bg-*`, `shadow-*` y más. Son mobile-first, con los breakpoints sm · md · lg · xl · xxl.
 - **Formularios acabados:** estados de hover y foco, anillo de marca, selects con chevron propio y lista desplegable con diseño en Chrome y Edge 135 o superior (en Firefox y Safari la lista es la nativa). Los campos de fecha tienen un selector propio.
+- **Patrones listos para documentación y paneles:** página con índice lateral, bloque de código con copiar, rejilla automática y muestras de color.
 - **Dos puntos de entrada:** `main.scss` (completo) y `core.scss` (solo el núcleo genérico).
 - **Internacionalización:** los componentes tienen textos en español, inglés, francés, portugués (Brasil) y chino, y las fechas y números se formatean según el idioma activo.
 - **TypeScript estricto** y estado compartido con composables singleton, sin Pinia.
@@ -220,7 +222,7 @@ import { Modal, SearchSelect, DateInput } from '@/components'
 |---|---|---|
 | `Icon` | Icono SVG del sprite (93 iconos) | `name` |
 | `IconSprite` | Sprite de símbolos; se monta una vez | — |
-| `Button` | Botón | `variant` (`pri` · `gho`), `type`, `disabled` ⚠️ |
+| `Button` | Botón | `variant` (`primary` … `dark`, `link`, `outline-*`), `size` (`sm` · `lg`), `type`, `disabled` |
 | `Card` | Tarjeta con título | `title` · slot `#title` |
 | `Badge` | Etiqueta de estado | `tone` (`primary` … `dark`), `pill` |
 | `Modal` | Diálogo | `v-model:open`, `title`, `size` (`sm` · `lg` · `xl`), `compact`, `contentClass` · slot `#footer` |
@@ -238,8 +240,6 @@ import { useNotify } from '@/store/useNotify'
 const notify = useNotify()
 notify.success('Guardado', 'El registro se guardó correctamente.')
 ```
-
-> ⚠️ **`Button`** emite las clases `.btn-pri` / `.btn-gho`, que no existen en el SCSS. Mientras se corrige, usa `<button class="btn btn-primary">`.
 
 En el [catálogo](#inicio-rápido) están todos los componentes en vivo, con sus props y su código.
 
@@ -282,10 +282,25 @@ vue-frontend-foundation/
 │   ├── layout/                   topbar, índice lateral, layout
 │   ├── sections/                 una sección por componente
 │   ├── demos/                    un .vue por ejemplo (el código mostrado sale de aquí)
-│   └── components/ utils/ styles/
-├── docs/assets/                  capturas
+│   └── components/ utils/        DemoBlock, DocSection, utilidades del catálogo
+├── docs/                         documentación técnica y capturas
 └── index.html · vite.config.ts · tsconfig*.json · package.json
 ```
+
+---
+
+## Documentación
+
+| Documento | Contenido |
+|---|---|
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | Capas, dependencias en un solo sentido, módulos, flujo de datos, nombres y alias |
+| [DESIGN-SYSTEM.md](docs/DESIGN-SYSTEM.md) | Organización SCSS, orden de carga, tokens, utilidades, patrones, formularios y tablas |
+| [COMPONENTS.md](docs/COMPONENTS.md) | Catálogo de componentes: props, eventos, slots, dependencias y ejemplos |
+| [STYLING-RULES.md](docs/STYLING-RULES.md) | Convenciones de clases, variables, SCSS y estilos inline |
+| [RESPONSIVE-DESIGN.md](docs/RESPONSIVE-DESIGN.md) | Breakpoints, contenedores, grid, gutters y adaptaciones |
+| [THEMING.md](docs/THEMING.md) | Tokens, claro/oscuro, cambio de tema, marca y carga sin parpadeo |
+| [DEVELOPMENT-GUIDELINES.md](docs/DEVELOPMENT-GUIDELINES.md) | TypeScript, SOLID, composables, HTTP, validación, i18n y errores |
+| [DEPENDENCIES.md](docs/DEPENDENCIES.md) | Dependencias, versiones probadas, requisitos y compatibilidad |
 
 ---
 
@@ -304,9 +319,9 @@ vue-frontend-foundation/
 
 - [x] Sistema de diseño con paleta de marca y tokens claro/oscuro
 - [x] Componentes globales y catálogo por componente
-- [ ] Corregir las variantes de `Button`
-- [ ] Catálogo construido solo con clases del sistema (sin CSS propio)
-- [ ] Documentación técnica en `docs/` (arquitectura, guía de estilos, responsive, theming)
+- [x] `Button` con todas las variantes y tamaños del sistema
+- [x] Catálogo construido solo con clases del sistema (sin CSS propio)
+- [x] Documentación técnica en `docs/`
 - [ ] Definir la licencia
 
 ---

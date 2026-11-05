@@ -1,0 +1,10 @@
+// Encabezados de sección de contenido: título, texto introductorio y subtítulo.
+// <section class="section-block">
+//   <h2 class="section-title">…</h2>
+//   <p class="section-lead">…</p>
+//   <h3 class="section-subtitle">…</h3>
+// </section>
+.section-block { margin-bottom: 40px; }
+.section-title { margin: 0 0 4px; font-size: 18px; font-weight: 800; color: var(--color-text); }
+.section-lead { margin: 0 0 14px; font-size: 13px; line-height: 1.5; color: var(--color-muted); }
+.section-subtitle { margin: 18px 0 8px; font-size: 13px; font-weight: 700; color: var(--color-muted); }

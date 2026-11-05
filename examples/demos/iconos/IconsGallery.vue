@@ -15,9 +15,9 @@ const icons = [
 </script>
 
 <template>
-  <div class="ds-icons">
-    <div v-for="n in icons" :key="n" class="ds-icon">
-      <svg class="ic"><use :href="`#i-${n}`" /></svg>{{ n }}
+  <div class="grid-auto grid-auto-sm">
+    <div v-for="n in icons" :key="n" class="card p-12 d-flex flex-column align-items-center gap-6 fs-11 text-muted">
+      <svg class="ic icon-xl text-body"><use :href="`#i-${n}`" /></svg>{{ n }}
     </div>
   </div>
 </template>

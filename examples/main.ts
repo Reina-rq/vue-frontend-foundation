@@ -5,7 +5,6 @@ import { installDateGlobals } from '@app/i18n/dates'
 import { installNumberGlobals } from '@app/i18n/numbers'
 import { useTheme } from '@/store/useTheme'
 import '@styles/main.scss'
-import './styles/_design-system.scss'
 
 useTheme().init()
 // Catálogo: ?theme=dark | ?theme=light fuerza el tema (útil para revisar y para capturas).

@@ -18,17 +18,17 @@ import fieldSpecialSrc from '../demos/formularios/FieldSpecial.vue?raw'
 <template>
   <DocSection id="formularios" title="Form control / Select">
     <template #lead><code>.form-label</code>, <code>.form-control</code>, <code>.form-select</code>, <code>.form-text</code>.</template>
-    <h3>Campos básicos</h3>
+    <h3 class="section-subtitle">Campos básicos</h3>
     <DemoBlock block :source="fieldsBasicSrc"><FieldsBasic /></DemoBlock>
-    <h3>Textarea</h3>
+    <h3 class="section-subtitle">Textarea</h3>
     <DemoBlock block :source="fieldTextareaSrc"><FieldTextarea /></DemoBlock>
-    <h3>Tamaños · <code>-sm</code> / <code>-lg</code></h3>
+    <h3 class="section-subtitle">Tamaños · <code>-sm</code> / <code>-lg</code></h3>
     <DemoBlock :source="fieldSizesSrc"><FieldSizes /></DemoBlock>
-    <h3>Checks, radio y switch</h3>
+    <h3 class="section-subtitle">Checks, radio y switch</h3>
     <DemoBlock :source="fieldChecksSrc"><FieldChecks /></DemoBlock>
-    <h3>Filas especiales</h3>
+    <h3 class="section-subtitle">Filas especiales</h3>
     <DemoBlock block :source="fieldRowsSrc"><FieldRows /></DemoBlock>
-    <h3>Select acento e icono al final</h3>
+    <h3 class="section-subtitle">Select acento e icono al final</h3>
     <DemoBlock :source="fieldSpecialSrc"><FieldSpecial /></DemoBlock>
   </DocSection>
 </template>

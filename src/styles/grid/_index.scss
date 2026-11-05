@@ -120,3 +120,15 @@ $container-max-widths: (
 
 // Las utilidades de display/flex/align/justify/width viven en utilities/
 // (_display, _flex, _sizing). Aquí solo el sistema de columnas.
+
+// --- Rejilla automática ---------------------------------------------------------
+// Columnas que se adaptan al ancho disponible (galerías, tarjetas, iconos).
+// Ancho mínimo por columna: --grid-auto-min (150px; -sm 92px; -lg 220px).
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--grid-auto-min, 150px), 1fr));
+  gap: 10px;
+  width: 100%;
+}
+.grid-auto-sm { --grid-auto-min: 92px; }
+.grid-auto-lg { --grid-auto-min: 220px; }

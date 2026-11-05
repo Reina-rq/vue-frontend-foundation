@@ -20,3 +20,5 @@
 }
 .popover-body { padding: 10px 12px; color: var(--color-text); }
 .popover-arrow { position: absolute; width: 12px; height: 6px; }
+// Ubicación debajo del disparador (contenedor .position-relative). Sin JS de posicionamiento.
+.popover-bottom { top: calc(100% + 6px); left: 0; }

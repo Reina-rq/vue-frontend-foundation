@@ -10,9 +10,9 @@ import tableAppSrc from '../demos/tablas/TableApp.vue?raw'
 <template>
   <DocSection id="tablas" title="Tablas">
     <template #lead>Variantes (<code>.table</code> + <code>-striped/-hover/-bordered/-sm</code>) y la tabla de la app (cabecera de color + acciones).</template>
-    <h3>Variantes · <code>.table</code></h3>
+    <h3 class="section-subtitle">Variantes · <code>.table</code></h3>
     <DemoBlock block :source="tableSrc"><Table /></DemoBlock>
-    <h3>Tabla de la app + paginador</h3>
+    <h3 class="section-subtitle">Tabla de la app + paginador</h3>
     <DemoBlock block :source="tableAppSrc"><TableApp /></DemoBlock>
   </DocSection>
 </template>

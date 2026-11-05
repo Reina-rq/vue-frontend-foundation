@@ -8,10 +8,10 @@ const bgColors = [
 </script>
 
 <template>
-  <div class="ds-swatches">
-    <div v-for="c in bgColors" :key="c" class="ds-swatch">
-      <div class="ds-swatch__c" :class="c"></div>
-      <div class="ds-swatch__l"><b>.{{ c }}</b></div>
+  <div class="grid-auto">
+    <div v-for="c in bgColors" :key="c" class="swatch">
+      <div class="swatch-color" :class="c"></div>
+      <div class="swatch-label"><b>.{{ c }}</b></div>
     </div>
   </div>
 </template>

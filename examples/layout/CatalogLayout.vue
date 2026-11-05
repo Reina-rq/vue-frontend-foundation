@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Estructura del catálogo: topbar + índice lateral + contenido (slot).
+// Estructura del catálogo: barra superior + índice lateral + contenido (slot).
 import type { CatalogGroup } from '../catalog/registry'
 import CatalogTopbar from './CatalogTopbar.vue'
 import CatalogSidebar from './CatalogSidebar.vue'
@@ -8,11 +8,11 @@ defineProps<{ groups: CatalogGroup[] }>()
 </script>
 
 <template>
-  <div class="ds-page">
+  <div class="min-vh-100">
     <CatalogTopbar />
-    <div class="ds-layout">
+    <div class="sidebar-layout">
       <CatalogSidebar :groups="groups" />
-      <main class="ds-main"><slot /></main>
+      <main class="sidebar-layout-main"><slot /></main>
     </div>
   </div>
 </template>

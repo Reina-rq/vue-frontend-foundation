@@ -39,11 +39,11 @@ async function copy(): Promise<void> {
 </script>
 
 <template>
-  <div v-if="$slots.default" class="ds-demo" :class="{ 'ds-demo--block': block }">
+  <div v-if="$slots.default" class="card" :class="{ 'd-flex flex-wrap align-items-center gap-12': !block }">
     <slot />
   </div>
-  <div v-if="code" class="ds-code-wrap">
-    <button type="button" class="ds-copy" @click="copy">{{ copied ? 'Copiado' : 'Copiar' }}</button>
-    <pre class="ds-code">{{ code }}</pre>
+  <div v-if="code" class="code-block-wrap">
+    <button type="button" class="code-block-copy" @click="copy">{{ copied ? 'Copiado' : 'Copiar' }}</button>
+    <pre class="code-block">{{ code }}</pre>
   </div>
 </template>

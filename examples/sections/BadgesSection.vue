@@ -8,7 +8,7 @@ import badgeVariantsSrc from '../demos/badges/BadgeVariants.vue?raw'
 <template>
   <DocSection id="badges" title="Badges">
     <template #lead><code>.badge</code> + variante de color; <code>.rounded-pill</code> para píldora.</template>
-    <h3>Variantes · <code>.badge .badge-*</code></h3>
+    <h3 class="section-subtitle">Variantes · <code>.badge .badge-*</code></h3>
     <DemoBlock :source="badgeVariantsSrc"><BadgeVariants /></DemoBlock>
   </DocSection>
 </template>

@@ -16,15 +16,15 @@ import buttonAddSrc from '../demos/botones/ButtonAdd.vue?raw'
 <template>
   <DocSection id="botones" title="Botones">
     <template #lead><code>.btn</code> + variante. Tamaños <code>.btn-sm</code> / <code>.btn-lg</code>.</template>
-    <h3>Variantes sólidas</h3>
+    <h3 class="section-subtitle">Variantes sólidas</h3>
     <DemoBlock :source="buttonVariantsSrc"><ButtonVariants /></DemoBlock>
-    <h3>Outline y deshabilitado</h3>
+    <h3 class="section-subtitle">Outline y deshabilitado</h3>
     <DemoBlock :source="buttonOutlineSrc"><ButtonOutline /></DemoBlock>
-    <h3>Tamaños e icono</h3>
+    <h3 class="section-subtitle">Tamaños e icono</h3>
     <DemoBlock :source="buttonSizesSrc"><ButtonSizes /></DemoBlock>
-    <h3>Grupos · <code>.btn-group</code> / <code>.btn-toolbar</code></h3>
+    <h3 class="section-subtitle">Grupos · <code>.btn-group</code> / <code>.btn-toolbar</code></h3>
     <DemoBlock :source="buttonGroupSrc"><ButtonGroup /></DemoBlock>
-    <h3>Acción y cancelar · <code>.addbtn</code> / <code>.btn-cancel</code></h3>
+    <h3 class="section-subtitle">Acción y cancelar · <code>.addbtn</code> / <code>.btn-cancel</code></h3>
     <DemoBlock :source="buttonAddSrc"><ButtonAdd /></DemoBlock>
   </DocSection>
 </template>

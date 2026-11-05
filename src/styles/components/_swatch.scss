@@ -1,0 +1,7 @@
+// Muestra de color (paletas, leyendas, selectores de color).
+// <div class="swatch"><div class="swatch-color bg-primary"></div><div class="swatch-label"><b>Nombre</b><span>Detalle</span></div></div>
+.swatch { overflow: hidden; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface); }
+.swatch-color { height: 52px; }
+.swatch-label { padding: 7px 10px; font-size: 11px; line-height: 1.4; }
+.swatch-label b { display: block; color: var(--color-text); }
+.swatch-label span { color: var(--color-muted); }

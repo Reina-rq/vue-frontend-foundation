@@ -10,9 +10,9 @@ import navPillsSrc from '../demos/navs/NavPills.vue?raw'
 <template>
   <DocSection id="navs" title="Navs & tabs">
     <template #lead><code>.nav-tabs</code> / <code>.nav-pills</code> + <code>.nav-link.active</code> y <code>.tab-content</code>.</template>
-    <h3>Tabs con contenido (Vue)</h3>
+    <h3 class="section-subtitle">Tabs con contenido (Vue)</h3>
     <DemoBlock block :source="navTabsSrc"><NavTabs /></DemoBlock>
-    <h3>Pills</h3>
+    <h3 class="section-subtitle">Pills</h3>
     <DemoBlock :source="navPillsSrc"><NavPills /></DemoBlock>
   </DocSection>
 </template>

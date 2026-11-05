@@ -22,6 +22,9 @@ body.dark {
   --color-primary-hover: var(--primary-2);
   // Rojo más claro para que el texto de error se lea sobre superficies oscuras.
   --color-danger: #e2786c;
+  // Bloque de código: más oscuro que la superficie y con borde para separarlo del fondo.
+  --code-bg: #0b1015;
+  --code-border: #2a323c;
   background: #0f141a;
   color: #e5e7eb;
 }
@@ -130,3 +133,8 @@ body.dark .alert-warning { background: rgba(238, 155, 0, 0.14); border-color: rg
 body.dark .alert-info { background: rgba(0, 95, 115, 0.3); border-color: rgba(10, 147, 150, 0.4); color: #8fd3d4; }
 body.dark .alert-light { background: #161d25; border-color: #2a323c; color: #cbd5e1; }
 body.dark .alert-dark { background: #0b1015; border-color: #2a323c; color: #e5e7eb; }
+
+// En oscuro --color-danger es un rojo claro (para texto); los fondos con texto blanco
+// mantienen el rojo de marca para conservar el contraste.
+body.dark .btn-danger,
+body.dark .btn-outline-danger:hover { background: var(--brand-red); color: var(--white); }

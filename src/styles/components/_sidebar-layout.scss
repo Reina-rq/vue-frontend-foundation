@@ -1,0 +1,66 @@
+// Página con barra superior fija + índice lateral sticky + contenido
+// (documentación, ajustes, ayuda…).
+// <div class="sidebar-page">
+//   <header class="topbar">…</header>
+//   <div class="sidebar-layout">
+//     <aside class="sidebar-layout-aside"><nav class="sidebar-nav">…</nav></aside>
+//     <main class="sidebar-layout-main">…</main>
+//   </div>
+// </div>
+:root { --topbar-height: 57px; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: var(--topbar-height);
+  padding: 10px 24px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.topbar-title { margin: 0; font-size: 16px; font-weight: 800; color: var(--color-text); }
+
+.sidebar-layout { display: flex; align-items: flex-start; gap: 28px; max-width: 1320px; margin: 0 auto; padding: 0 24px; }
+.sidebar-layout-aside {
+  position: sticky;
+  top: var(--topbar-height);
+  flex-shrink: 0;
+  width: 220px;
+  max-height: calc(100vh - var(--topbar-height));
+  overflow: auto;
+  padding: 22px 0 40px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+.sidebar-layout-main { flex: 1; min-width: 0; padding: 24px 0 80px; }
+// Las anclas no quedan tapadas por la barra superior.
+.sidebar-layout-main [id] { scroll-margin-top: calc(var(--topbar-height) + 15px); }
+
+.sidebar-nav + .sidebar-nav { margin-top: 16px; }
+.sidebar-nav-title { display: block; padding: 0 10px 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--color-muted); }
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color .12s, color .12s;
+}
+.sidebar-nav-link:hover { background: var(--color-background); color: var(--color-primary); }
+.sidebar-nav-link.active { background: var(--primary-50); color: var(--color-primary); font-weight: 700; }
+body.dark .sidebar-nav-link.active { background: color-mix(in srgb, var(--color-primary) 18%, transparent); }
+
+@media (max-width: 900px) {
+  .topbar { padding: 10px 16px; flex-wrap: wrap; }
+  .sidebar-layout { flex-direction: column; gap: 0; padding: 0 16px; }
+  .sidebar-layout-aside { position: static; width: 100%; max-height: none; padding: 12px 0; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  .sidebar-nav + .sidebar-nav { margin-top: 0; }
+  .sidebar-nav { display: flex; flex-wrap: wrap; gap: 2px; }
+  .sidebar-nav-title { display: none; }
+}

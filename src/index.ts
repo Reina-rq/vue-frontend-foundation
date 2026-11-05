@@ -1,5 +1,6 @@
 // Punto de entrada de la fundación. Los estilos se importan aparte: import '@styles/main.scss'
 export * from './components'
+export type { ButtonVariant } from './components/Button.vue'
 export { useNotify, type NotifyType, type Toast } from './store/useNotify'
 export { usePrintDoc, printDocFromParts, type DocOptions, type DocSection, type DocKV } from './store/usePrintDoc'
 export { useTheme, type Theme } from './store/useTheme'

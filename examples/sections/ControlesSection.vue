@@ -22,20 +22,20 @@ import tabsContentSrc from '../demos/controles/TabsContent.vue?raw'
 <template>
   <DocSection id="controles" title="Controles propios">
     <template #lead>Controles a medida: búsqueda, chips, toggle, fotos, adjuntos, categorías, pestañas y segmentados.</template>
-    <h3>Búsqueda · <code>.lsearch</code></h3>
+    <h3 class="section-subtitle">Búsqueda · <code>.lsearch</code></h3>
     <DemoBlock :source="controlSearchSrc"><ControlSearch /></DemoBlock>
-    <h3>Chips · <code>.chip</code></h3>
+    <h3 class="section-subtitle">Chips · <code>.chip</code></h3>
     <DemoBlock :source="controlChipSrc"><ControlChip /></DemoBlock>
-    <h3>Toggle propio · <code>.tgl</code></h3>
+    <h3 class="section-subtitle">Toggle propio · <code>.tgl</code></h3>
     <DemoBlock :source="controlTglSrc"><ControlTgl /></DemoBlock>
-    <h3>Foto y adjunto · <code>.photo</code> / <code>.attach</code></h3>
+    <h3 class="section-subtitle">Foto y adjunto · <code>.photo</code> / <code>.attach</code></h3>
     <DemoBlock :source="controlPhotoSrc"><ControlPhoto /></DemoBlock>
     <DemoBlock :source="controlAttachSrc"><ControlAttach /></DemoBlock>
-    <h3>Categorías · <code>.catlist</code> / <code>.catadd</code></h3>
+    <h3 class="section-subtitle">Categorías · <code>.catlist</code> / <code>.catadd</code></h3>
     <DemoBlock block :source="controlCatSrc"><ControlCat /></DemoBlock>
-    <h3>Segmentados · <code>.segbtns</code> (Vue)</h3>
+    <h3 class="section-subtitle">Segmentados · <code>.segbtns</code> (Vue)</h3>
     <DemoBlock :source="segmentedSrc"><Segmented /></DemoBlock>
-    <h3>Pestañas simples con contenido · <code>.tabs</code> + <code>.tpane</code> (Vue)</h3>
+    <h3 class="section-subtitle">Pestañas simples con contenido · <code>.tabs</code> + <code>.tpane</code> (Vue)</h3>
     <DemoBlock block :source="tabsContentSrc"><TabsContent /></DemoBlock>
   </DocSection>
 </template>

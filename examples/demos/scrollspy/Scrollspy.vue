@@ -22,13 +22,13 @@ function onSpy(e: Event) {
       <li class="nav-item"><a class="nav-link" :class="{ active: spy === 'b' }">Dos</a></li>
       <li class="nav-item"><a class="nav-link" :class="{ active: spy === 'c' }">Tres</a></li>
     </ul>
-    <div class="ds-spy-body" @scroll="onSpy">
-      <h4 id="spy-a">Uno</h4>
-      <p class="text-muted">Sección uno. Haz scroll para ver cómo cambia el resaltado del nav.</p>
-      <h4 id="spy-b">Dos</h4>
-      <p class="text-muted">Sección dos. Más contenido de relleno para poder desplazar.</p>
-      <h4 id="spy-c">Tres</h4>
-      <p class="text-muted">Sección tres, la última del contenedor con scroll.</p>
+    <div class="flex-1 position-relative h-140 overflow-auto border rounded-3 p-12" @scroll="onSpy">
+      <h4 id="spy-a" class="fs-14 fw-800 mb-6">Uno</h4>
+      <p class="text-muted mb-5">Sección uno. Haz scroll para ver cómo cambia el resaltado del nav.</p>
+      <h4 id="spy-b" class="fs-14 fw-800 mb-6">Dos</h4>
+      <p class="text-muted mb-5">Sección dos. Más contenido de relleno para poder desplazar.</p>
+      <h4 id="spy-c" class="fs-14 fw-800 mb-6">Tres</h4>
+      <p class="text-muted mb-5">Sección tres, la última del contenedor con scroll.</p>
     </div>
   </div>
 </template>

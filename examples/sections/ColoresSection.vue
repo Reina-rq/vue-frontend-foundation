@@ -12,10 +12,10 @@ import bgColorsUsageSrc from '../demos/colores/BgColorsUsage.vue?raw'
 <template>
   <DocSection id="colores" title="Colores">
     <template #lead>Utilidades de texto y fondo (vía tokens / paleta).</template>
-    <h3>Texto · <code>.text-*</code></h3>
+    <h3 class="section-subtitle">Texto · <code>.text-*</code></h3>
     <DemoBlock><TextColorsGallery /></DemoBlock>
     <DemoBlock :source="textColorsUsageSrc"><TextColorsUsage /></DemoBlock>
-    <h3>Fondo · <code>.bg-*</code></h3>
+    <h3 class="section-subtitle">Fondo · <code>.bg-*</code></h3>
     <DemoBlock block><BgColorsGallery /></DemoBlock>
     <DemoBlock block :source="bgColorsUsageSrc"><BgColorsUsage /></DemoBlock>
   </DocSection>

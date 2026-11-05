@@ -11,9 +11,9 @@ import multiselectMultipleSrc from '../demos/multiselect/MultiselectMultiple.vue
   <DocSection id="multiselect">
     <template #title>Multiselect · <code>.msel</code></template>
     <template #lead>Selector con popup. De <b>uno</b> (radio, cierra al elegir) o de <b>varios</b> (checkbox, suma etiquetas).</template>
-    <h3>De uno (selección única)</h3>
+    <h3 class="section-subtitle">De uno (selección única)</h3>
     <DemoBlock :source="multiselectSingleSrc"><MultiselectSingle /></DemoBlock>
-    <h3>De varios (múltiple)</h3>
+    <h3 class="section-subtitle">De varios (múltiple)</h3>
     <DemoBlock :source="multiselectMultipleSrc"><MultiselectMultiple /></DemoBlock>
   </DocSection>
 </template>

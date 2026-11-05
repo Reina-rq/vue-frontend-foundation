@@ -7,9 +7,9 @@ defineProps<{
 </script>
 
 <template>
-  <section :id="id" class="ds-section">
-    <h2><slot name="title">{{ title }}</slot></h2>
-    <p v-if="$slots.lead" class="ds-lead"><slot name="lead" /></p>
+  <section :id="id" class="section-block">
+    <h2 class="section-title"><slot name="title">{{ title }}</slot></h2>
+    <p v-if="$slots.lead" class="section-lead"><slot name="lead" /></p>
     <slot />
   </section>
 </template>

@@ -12,6 +12,7 @@
 @use 'base/icon';
 @use 'base/tables';
 @use 'base/print';
+@use 'base/code';
 
 // 3) Layout (navbar horizontal + estructura).
 @use 'layouts/navbar';
@@ -59,6 +60,9 @@
 @use 'components/tooltip';
 @use 'components/popover';
 @use 'components/offcanvas';
+@use 'components/swatch';
+@use 'components/section-heading';
+@use 'components/sidebar-layout';
 
 // 6) Sistema de grid global (container/row/col/g-*/offset + utilities layout).
 @use 'grid/index' as grid;

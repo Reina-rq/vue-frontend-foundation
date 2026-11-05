@@ -1,9 +1,9 @@
 // Estado global de tema (light | dark). Singleton reactivo.
-// Replica el original: alterna la clase `dark` en <body> y persiste en localStorage('fw_theme').
+// Alterna la clase `dark` en <body> y persiste la elección en localStorage('theme').
 import { ref, computed } from 'vue'
 
 export type Theme = 'light' | 'dark'
-const STORAGE_KEY = 'fw_theme'
+const STORAGE_KEY = 'theme'
 
 const theme = ref<Theme>('light')
 

@@ -15,7 +15,7 @@
     <!-- Aplica el modo oscuro antes del primer render para evitar parpadeo (FOUC). -->
     <script>
       try {
-        if (localStorage.getItem('fw_theme') === 'dark') document.body.classList.add('dark')
+        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark')
       } catch (e) {}
     </script>
     <div id="app"></div>

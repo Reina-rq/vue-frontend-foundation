@@ -120,3 +120,13 @@ body.dark .bg-violet-100 { background-color: rgba(139, 92, 246, 0.16); }
 body.dark .bg-slate-100 { background-color: #1b222b; }
 body.dark .bg-slate-200 { background-color: #222b35; }
 body.dark .bg-slate-300 { background-color: #2a323c; }
+
+// Alertas en oscuro: tinte translúcido del tono + texto claro legible.
+body.dark .alert-primary { background: color-mix(in srgb, var(--color-primary) 16%, transparent); border-color: color-mix(in srgb, var(--color-primary) 40%, transparent); color: var(--brand-mint); }
+body.dark .alert-secondary { background: #1b222b; border-color: #2a323c; color: #cbd5e1; }
+body.dark .alert-success { background: rgba(10, 147, 150, 0.16); border-color: rgba(10, 147, 150, 0.4); color: var(--brand-mint); }
+body.dark .alert-danger { background: rgba(174, 32, 18, 0.2); border-color: rgba(174, 32, 18, 0.45); color: #e2786c; }
+body.dark .alert-warning { background: rgba(238, 155, 0, 0.14); border-color: rgba(238, 155, 0, 0.4); color: var(--brand-amber); }
+body.dark .alert-info { background: rgba(0, 95, 115, 0.3); border-color: rgba(10, 147, 150, 0.4); color: #8fd3d4; }
+body.dark .alert-light { background: #161d25; border-color: #2a323c; color: #cbd5e1; }
+body.dark .alert-dark { background: #0b1015; border-color: #2a323c; color: #e5e7eb; }

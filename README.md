@@ -12,6 +12,7 @@ Clona, ajusta la marca y empieza a construir: sin librerías visuales externas y
 ![Sass](https://img.shields.io/badge/SCSS-propio-cc6699?logo=sass&logoColor=white)
 ![vue-i18n](https://img.shields.io/badge/i18n-5%20idiomas-005f73)
 ![Tema](https://img.shields.io/badge/tema-claro%20%2F%20oscuro-001219)
+[![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-0a9396)](LICENSE)
 
 </div>
 
@@ -36,6 +37,7 @@ Clona, ajusta la marca y empieza a construir: sin librerías visuales externas y
 - [Documentación](#documentación)
 - [Convenciones](#convenciones)
 - [Estado del proyecto](#estado-del-proyecto)
+- [Licencia](#licencia)
 
 ---
 
@@ -322,7 +324,15 @@ vue-frontend-foundation/
 - [x] `Button` con todas las variantes y tamaños del sistema
 - [x] Catálogo construido solo con clases del sistema (sin CSS propio)
 - [x] Documentación técnica en `docs/`
-- [ ] Definir la licencia
+- [x] Licencia MIT
+
+---
+
+## Licencia
+
+Distribuido bajo la licencia **MIT**. Puedes usar, copiar, modificar y distribuir el código, también en proyectos comerciales, siempre que conserves el aviso de copyright. Ver [LICENSE](LICENSE).
+
+© 2026 Liz Reina
 
 ---
 

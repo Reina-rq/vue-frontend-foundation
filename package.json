@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "description": "Sistema de diseño SCSS, componentes globales Vue 3 y arquitectura base.",
+  "author": "Liz Reina",
+  "license": "MIT",
   "scripts": {
     "dev": "vite --port 3000",
     "build": "vue-tsc -b && vite build",

@@ -1,0 +1,122 @@
+// =============================================================================
+// Sistema de grid global (propio, sin dependencias).
+// Mobile-first: las columnas sin breakpoint ocupan su fracción en TODOS los
+// anchos; usar `.col-12 .col-md-*` para apilar en móvil y repartir en ≥md.
+// Breakpoints: sm 576 · md 768 · lg 992 · xl 1200 · xxl 1400 (ver abstracts).
+// Solo introduce nombres nuevos; NO toca las utilidades de spacing px ya existentes.
+// =============================================================================
+@use 'sass:map';
+@use 'sass:math';
+@use '../abstracts/breakpoints' as *; // expone $breakpoints
+
+$grid-columns: 12;
+$gutter: 1rem; // gutter por defecto (~16px, equivalente a los gaps actuales)
+
+// Escala de gutters: 0, .25, .5, 1, 1.5, 3 rem
+$gutters: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem,
+);
+
+// Ancho máximo del .container por breakpoint.
+$container-max-widths: (
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1320px,
+);
+
+// --- Containers ---------------------------------------------------------------
+.container,
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: calc(var(--gutter-x, #{$gutter}) * 0.5);
+  padding-left: calc(var(--gutter-x, #{$gutter}) * 0.5);
+}
+@each $name, $bp in $breakpoints {
+  @media (min-width: $bp) {
+    .container {
+      max-width: map.get($container-max-widths, $name);
+    }
+  }
+}
+
+// --- Row ----------------------------------------------------------------------
+.row {
+  --gutter-x: #{$gutter};
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+}
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+
+// --- Generador de columnas (mobile-first) ------------------------------------
+@mixin make-cols($infix: '') {
+  .col#{$infix} {
+    flex: 1 0 0%;
+  } // reparto equitativo del espacio restante
+  .col#{$infix}-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  @for $i from 1 through $grid-columns {
+    .col#{$infix}-#{$i} {
+      flex: 0 0 auto;
+      width: math.div($i, $grid-columns) * 100%;
+    }
+  }
+  // Offsets
+  .offset#{$infix}-0 {
+    margin-left: 0;
+  }
+  @for $i from 1 through ($grid-columns - 1) {
+    .offset#{$infix}-#{$i} {
+      margin-left: math.div($i, $grid-columns) * 100%;
+    }
+  }
+}
+
+// Base (sin breakpoint)
+@include make-cols('');
+
+// Por breakpoint
+@each $name, $bp in $breakpoints {
+  @media (min-width: $bp) {
+    @include make-cols('-#{$name}');
+  }
+}
+
+// --- Gutters ------------------------------------------------------------------
+@each $key, $val in $gutters {
+  .g-#{$key} {
+    --gutter-x: #{$val};
+    --gutter-y: #{$val};
+  }
+  .gx-#{$key} {
+    --gutter-x: #{$val};
+  }
+  .gy-#{$key} {
+    --gutter-y: #{$val};
+  }
+}
+
+// Las utilidades de display/flex/align/justify/width viven en utilities/
+// (_display, _flex, _sizing). Aquí solo el sistema de columnas.

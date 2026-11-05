@@ -1,0 +1,26 @@
+// Placeholders (skeleton).
+.placeholder {
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  background-color: currentColor;
+  opacity: .5;
+  border-radius: 4px;
+  cursor: wait;
+}
+.placeholder.btn::before { display: inline-block; content: ""; }
+.placeholder-xs { min-height: .6em; }
+.placeholder-sm { min-height: .8em; }
+.placeholder-lg { min-height: 1.2em; }
+
+@keyframes placeholder-glow { 50% { opacity: .2; } }
+.placeholder-glow .placeholder { animation: placeholder-glow 2s ease-in-out infinite; }
+
+@keyframes placeholder-wave {
+  100% { mask-position: -200% 0%; }
+}
+.placeholder-wave {
+  mask-image: linear-gradient(130deg, var(--black) 55%, rgba(0, 0, 0, .8) 75%, var(--black) 95%);
+  mask-size: 200% 100%;
+  animation: placeholder-wave 2s linear infinite;
+}

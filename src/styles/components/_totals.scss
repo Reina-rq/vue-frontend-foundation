@@ -1,0 +1,20 @@
+// Componentes de resumen reutilizables: caja de totales, línea clave-valor y paso numerado.
+@use '../abstracts/flags' as *;
+@if $legacy {
+
+  // Caja de resumen: filas clave-valor + fila de total destacada.
+  .totals { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-top: 6px; }
+  .totals-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; }
+  .totals-row.is-total { border-top: 1px solid var(--line); margin-top: 6px; padding-top: 9px; font-weight: 800; font-size: 15px; }
+  .totals-row.is-total b { color: var(--primary); }
+
+  // Línea clave-valor (label a la izquierda, valor a la derecha, separador inferior).
+  .kv-line { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .kv-line span { color: var(--slate-500); }
+
+  // Paso numerado de un flujo (círculo con número + cuerpo).
+  .flow-step { display: flex; align-items: center; gap: 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; margin-bottom: 9px; }
+  .flow-step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--primary); color: var(--color-on-primary); font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .flow-step-body { flex: 1; min-width: 0; }
+  .flow-step-body b { font-size: 13px; }
+}

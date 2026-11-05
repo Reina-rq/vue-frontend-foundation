@@ -1,0 +1,33 @@
+// Typography utilities.
+.text-start { text-align: left; }
+.text-end { text-align: right; }
+.text-center { text-align: center; }
+.text-wrap { white-space: normal; }
+.text-nowrap { white-space: nowrap; }
+.text-break { word-break: break-word; overflow-wrap: break-word; }
+.text-lowercase { text-transform: lowercase; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.fw-light { font-weight: 300; }
+.fw-normal { font-weight: 400; }
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.fw-bold { font-weight: 700; }
+.fw-bolder { font-weight: 800; }
+.fst-normal { font-style: normal; }
+.fst-italic { font-style: italic; }
+
+// Escala de títulos.
+.fs-1 { font-size: 2.5rem; }
+.fs-2 { font-size: 2rem; }
+.fs-3 { font-size: 1.75rem; }
+.fs-4 { font-size: 1.5rem; }
+.fs-5 { font-size: 1.25rem; }
+.fs-6 { font-size: 1rem; }
+
+.lh-1 { line-height: 1; }
+.lh-sm { line-height: 1.25; }
+.lh-base { line-height: 1.5; }
+.lh-lg { line-height: 2; }
+.lh-relaxed { line-height: 1.7; }

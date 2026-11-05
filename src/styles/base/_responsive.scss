@@ -1,0 +1,87 @@
+// Adaptación responsive (tablet y móvil, incluido Android). Se carga al final
+// de main.scss para tener prioridad sobre los grids fijos.
+@use '../abstracts/flags' as *;
+
+// --- Tablet y móvil ---
+@media (max-width: 768px) {
+  @if $legacy {
+  // Estructura general
+    .body { padding: 12px; }
+    .top { padding: 12px 14px 0; }
+    .top .ttl { font-size: 16px; }
+}
+  .card,
+  .sec { padding: 12px; }
+
+  @if $legacy {
+  // Navbar: cabecera puede envolver; los enlaces en una fila deslizable
+    .side-top { padding: 10px 14px; flex-wrap: wrap; }
+    .side-nav {
+      padding: 8px 12px;
+      gap: 4px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .brand .brand-name { font-size: 14px; }
+
+    // Barras de herramientas: envuelven en vez de desbordar
+    .fbar { flex-wrap: wrap; }
+
+    // Pestañas: deslizables si no caben
+    .tabs { overflow-x: auto; }
+    .tab { white-space: nowrap; }
+
+    // Barra de servicio (Unidad de Medida + Total) envuelve si no cabe
+
+    // Filas "foto/sidebar + campos" que se apilan en móvil
+    .row-stack { flex-direction: column; }
+
+    // Filas con input + botón: envuelven en vez de desbordar
+    .catadd { flex-wrap: wrap; }
+
+    // Grids de contenido aún basados en CSS grid (los demás usan el grid global .row/.col-*)
+    .cfggrid{
+      grid-template-columns: 1fr !important;
+    }
+
+    // Filas de formulario "label + campo" (modales de alta/edición): apilan en vez de recortar la etiqueta
+    .form-row-horizontal {
+      grid-template-columns: 1fr !important;
+      gap: 3px !important;
+    }
+    .form-row-horizontal > .text-end {
+      text-align: left !important;
+    }
+
+    // KPIs aún basados en CSS grid → 2 columnas
+    .kpis {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+  // Tablas: scroll horizontal en vez de desbordar la pantalla
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  // Modales: caben siempre en la pantalla (anula los max-width fijos: 420/980/1080px)
+  .modal { width: 96vw !important; max-width: 96vw !important; }
+
+  @if $legacy {
+  // Página Sistema de diseño
+    .ds-page { padding: 16px; }
+}
+}
+
+// --- Móvil estrecho (Android típico) ---
+@media (max-width: 480px) {
+  @if $legacy {
+  .kpis {
+      grid-template-columns: 1fr !important;
+    }
+}
+}

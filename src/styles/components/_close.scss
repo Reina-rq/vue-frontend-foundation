@@ -1,0 +1,16 @@
+// Botón de cierre (×). El modal del proyecto usa .modal-close; este es
+// el genérico reutilizable para toasts, alerts dismissibles, offcanvas, etc.
+.btn-close {
+  width: 24px; height: 24px;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 0;
+  border: 0; border-radius: 6px;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 20px; line-height: 1;
+  cursor: pointer;
+}
+.btn-close::before { content: "\00D7"; }
+.btn-close:hover { background: var(--color-background); color: var(--color-text); }
+.btn-close:disabled { opacity: .4; cursor: not-allowed; }
+.btn-close-white { color: var(--white); }

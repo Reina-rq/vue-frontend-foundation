@@ -1,0 +1,67 @@
+// Selector de fecha propio (popup de <DateInput>). Sustituye al calendario nativo del
+// navegador, que no admite estilos.
+// .datepicker
+//   .datepicker-header (.datepicker-nav ×2 + .datepicker-title)
+//   .datepicker-grid   (.datepicker-dow ×7 + .datepicker-day[.is-muted|.is-today|.is-selected] ×42)
+//   .datepicker-footer (.datepicker-link ×2)
+.datepicker {
+  position: fixed;
+  z-index: 2000;
+  width: 272px;
+  padding: 10px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  animation: dropdown-in .14s ease-out;
+  user-select: none;
+}
+
+.datepicker-header { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+.datepicker-title { font-size: 13.5px; font-weight: 800; color: var(--color-text); }
+.datepicker-title::first-letter { text-transform: uppercase; }
+.datepicker-nav {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; padding: 0;
+  border: 0; border-radius: var(--radius-md);
+  background: transparent; color: var(--color-muted); cursor: pointer;
+  transition: background-color .12s, color .12s;
+}
+.datepicker-nav:hover { background: var(--color-background); color: var(--color-primary); }
+.datepicker-nav .ic { width: 16px; height: 16px; }
+
+.datepicker-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+.datepicker-dow {
+  padding: 4px 0 6px;
+  text-align: center;
+  font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+  color: var(--color-muted);
+}
+.datepicker-day {
+  height: 32px;
+  border: 0; border-radius: var(--radius-md);
+  background: transparent;
+  font: inherit; font-size: 12.5px; font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color .12s, color .12s;
+}
+.datepicker-day:hover { background: var(--color-background); }
+.datepicker-day:focus-visible { outline: 0; box-shadow: var(--input-focus-ring); }
+.datepicker-day.is-muted { color: var(--color-muted); opacity: .55; }
+.datepicker-day.is-today { color: var(--color-primary); font-weight: 800; box-shadow: inset 0 0 0 1px var(--color-primary); }
+.datepicker-day.is-selected,
+.datepicker-day.is-selected:hover { background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; box-shadow: none; opacity: 1; }
+
+.datepicker-footer { display: flex; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--color-border); }
+.datepicker-link {
+  padding: 5px 9px;
+  border: 0; border-radius: var(--radius-sm);
+  background: transparent;
+  font: inherit; font-size: 12.5px; font-weight: 700;
+  color: var(--color-primary); cursor: pointer;
+}
+.datepicker-link:hover { background: var(--color-background); }
+
+// Icono del DateInput mientras el popup está abierto.
+.input-icon-end.is-active { color: var(--color-primary); background: var(--color-background); }

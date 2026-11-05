@@ -1,0 +1,73 @@
+// Orquesta el orden de carga del sistema visual (réplica fiel del original).
+// Las abstracts (tokens/mixins) NO se importan aquí: Vite las inyecta en cada
+// <style lang="scss"> vía additionalData. Aquí solo va lo que EMITE CSS.
+
+// 1) Temas (CSS Variables) — primero. La paleta va antes que los tokens semánticos.
+@use 'themes/palette';
+@use 'themes/light';
+@use 'themes/dark';
+
+// 2) Base.
+@use 'base/reset';
+@use 'base/icon';
+@use 'base/tables';
+@use 'base/print';
+
+// 3) Layout (navbar horizontal + estructura).
+@use 'layouts/navbar';
+
+// 4) Componentes.
+@use 'components/kpi';
+@use 'components/card';
+@use 'components/badge';
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/form-extras';
+@use 'components/form-controls';
+@use 'components/datepicker';
+@use 'components/tabs';
+@use 'components/modal';
+@use 'components/pager';
+@use 'components/timeline';
+@use 'components/config';
+@use 'components/totals';
+@use 'components/toast';
+@use 'components/alerts';
+@use 'components/dropdowns';
+@use 'components/rte';
+@use 'components/ledger';
+@use 'components/progress';
+@use 'components/toolbar';
+@use 'components/check-list';
+@use 'components/confirm';
+@use 'components/calendar';
+@use 'components/help-icon';
+
+// 4b) Componentes nuevos (sistema interno completo).
+@use 'components/containers';
+@use 'components/images';
+@use 'components/tables-variants';
+@use 'components/breadcrumb';
+@use 'components/close';
+@use 'components/list-group';
+@use 'components/pagination';
+@use 'components/spinners';
+@use 'components/placeholders';
+@use 'components/accordion';
+@use 'components/collapse';
+@use 'components/carousel';
+@use 'components/tooltip';
+@use 'components/popover';
+@use 'components/offcanvas';
+
+// 6) Sistema de grid global (container/row/col/g-*/offset + utilities layout).
+@use 'grid/index' as grid;
+
+// 7) Helpers (clearfix, ratio, stacks, vr, visually-hidden, etc.).
+@use 'helpers/index' as helpers;
+
+// 8) Utilidades.
+@use 'utilities/index';
+
+// 8) Responsive (al final, para tener prioridad sobre los grids fijos).
+@use 'base/responsive';

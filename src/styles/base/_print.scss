@@ -1,0 +1,34 @@
+// Diseño de documento imprimible (ficha técnica, comprobantes…). Reutilizable: se ve igual
+// en pantalla (vista previa) e impresión.
+// Las páginas usan la clase .print-doc; lo que no debe imprimirse lleva .no-print.
+@use '../abstracts/flags' as *;
+.print-doc { max-width: 780px; margin: 0 auto; background: var(--white); padding: 30px 40px 40px; box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08); }
+.print-doc .hd { display: flex; align-items: center; background: var(--print-ink); color: var(--white); padding: 13px 18px; border-radius: 6px; margin-bottom: 18px; }
+.print-doc .hd b { font-size: 16px; }
+.print-doc .hd span { margin-left: auto; color: var(--print-ink-soft); font-size: 12px; }
+.print-doc h1 { color: var(--primary); font-size: 22px; margin-bottom: 3px; }
+.print-doc .sub { color: var(--color-muted); font-size: 12.5px; }
+.print-doc .rule { height: 2px; background: var(--primary); margin: 11px 0 4px; }
+.print-doc h2 { font-size: 13.5px; color: var(--print-ink); margin: 20px 0 8px; border-bottom: 1px solid var(--print-line); padding-bottom: 4px; }
+.print-doc .kv { display: flex; font-size: 12.5px; padding: 5px 0; border-bottom: 1px solid var(--print-rule); }
+.print-doc .kv b { width: 215px; flex-shrink: 0; }
+.print-doc .kv span { color: var(--gray-700); }
+.print-doc .kv-total { border-bottom: 0; margin-top: 6px; }
+.print-doc .kv-total b { width: auto; flex: 1; font-weight: 700; }
+.print-doc .kv-total span { color: var(--primary); font-weight: 800; }
+.print-doc .note-sm { font-size: 10.5px; color: var(--print-note); padding: 4px 0; }
+// `table`/`th`/`td` toman width/border-collapse/text-align del global (_tables.scss); aquí
+// solo lo propio del documento: cabecera oscura y grid de borde completo.
+.print-doc table { font-size: 11.5px; margin-bottom: 4px; }
+.print-doc th { background: var(--print-ink); color: var(--white); padding: 6px 8px; }
+.print-doc td { border: 1px solid var(--print-line); padding: 6px 8px; }
+.print-doc .ft { margin-top: 20px; color: var(--print-muted); font-size: 10.5px; }
+
+@media print {
+  body { background: var(--white); }
+  @if $legacy {
+  .layout { display: none !important; }
+} // páginas dentro del layout no imprimen el chrome
+  .no-print { display: none !important; }
+  .print-doc { max-width: none; padding: 6px; box-shadow: none; }
+}

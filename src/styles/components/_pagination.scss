@@ -1,0 +1,24 @@
+// Pagination (el paginador propio del proyecto es .pager; este es el
+// genérico de páginas numeradas).
+.pagination { display: inline-flex; list-style: none; margin: 0; padding: 0; }
+.page-item { display: inline-flex; }
+.page-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 34px; height: 34px;
+  padding: 0 10px;
+  font-size: 13px;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  margin-left: -1px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+.page-item:first-child .page-link { margin-left: 0; border-top-left-radius: var(--radius-md); border-bottom-left-radius: var(--radius-md); }
+.page-item:last-child .page-link { border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md); }
+.page-link:hover { background: var(--color-background); }
+.page-item.active .page-link { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-on-primary); font-weight: 700; }
+.page-item.disabled .page-link { color: var(--color-muted); pointer-events: none; background: var(--color-background); }
+.pagination-sm .page-link { min-width: 28px; height: 28px; font-size: 12px; }
+.pagination-lg .page-link { min-width: 42px; height: 42px; font-size: 14px; }

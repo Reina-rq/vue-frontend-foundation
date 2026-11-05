@@ -1,0 +1,61 @@
+// Modales y opciones de estado.
+@use '../abstracts/flags' as *;
+.modal-bg { position: fixed; inset: 0; background: rgba(20, 15, 12, 0.45); display: none; align-items: center; justify-content: center; z-index: 60; padding: 20px; }
+.modal-bg.on { display: flex; }
+// Modificador: difumina el contenido del fondo (p. ej. bloqueo por inactividad).
+.modal-bg.blur { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.modal { background: var(--color-surface); border-radius: 14px; padding: 20px 22px; width: 540px; max-width: 96%; max-height: 90vh; overflow: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+.modal.sm { width: 420px; }
+.modal.lg { width: 720px; }
+.modal.xl { width: 960px; }
+.modal.modal-xl { width: 1080px; }
+// Iconos de botones en la cabecera del modal (p. ej. botones de tema): 18px y heredan el color del botón.
+.modal h3 .btn .ic { width: 18px; height: 18px; color: inherit; }
+@if $legacy {
+  // Barra de título gris con cierre.
+  .modal-titlebar { display: flex; justify-content: space-between; align-items: center; background: var(--gray-200); margin: -16px -18px 14px; padding: 10px 18px; font-weight: 700; font-size: 15px; border-radius: 14px 14px 0 0; }
+  .modal-close { cursor: pointer; font-size: 20px; color: var(--color-muted); line-height: 1; }
+  body.dark .modal-titlebar { background: var(--ink-panel); }
+}
+/* Modo compacto (equivale a density="compact" del original): campos y botones densos */
+.modal.mc { padding: 16px 18px; }
+.modal.mc h3 { font-size: 15px; margin-bottom: 10px; }
+.modal.mc .form-label { font-size: 11px; margin-bottom: 3px; }
+.modal.mc .form-control,
+.modal.mc .form-select,
+.modal.mc textarea { padding: 6px 8px; font-size: 12.5px; border-radius: 6px; min-height: 0; }
+.modal.mc textarea { min-height: 48px; }
+.modal.mc .mfoot { margin-top: 12px; }
+.modal.mc .mfoot .btn { padding: 6px 14px; font-size: 12.5px; border-radius: 7px; }
+/* Inputs/selects "desnudos" (fuera de .fld) dentro del modal compacto */
+.modal.mc input:not([type='checkbox']):not([type='file']),
+.modal.mc select {
+  padding: 6px 8px; font-size: 12.5px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--color-surface); color: var(--color-text); font-family: inherit; outline: none; min-height: 0; min-width: 0;
+}
+.modal.mc input:focus,
+.modal.mc select:focus { border-color: var(--primary); }
+body.dark .modal.mc input:not([type='checkbox']):not([type='file']),
+body.dark .modal.mc select { background: var(--dark-input-bg); color: var(--gray-200); }
+.modal h3 { margin: 0 0 4px; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.modal h3 .ic { width: 18px; height: 18px; color: var(--primary); }
+.modal .msub { color: var(--color-muted); font-size: 12.5px; margin-bottom: 14px; }
+.modal textarea { width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font-size: 13px; font-family: inherit; outline: none; resize: vertical; min-height: 64px; }
+.modal textarea:focus { border-color: var(--primary); }
+.mfoot { display: flex; justify-content: flex-end; gap: 9px; margin-top: 16px; }
+.modal table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.modal table th { text-align: left; color: var(--color-muted); font-size: 11px; font-weight: 600; padding: 4px 5px; }
+.modal table td { padding: 4px 5px; }
+.modal table input, .modal table select { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 6px 7px; font-size: 12px; font-family: inherit; outline: none; color: var(--color-text); }
+
+// === Estructura (no colisiona con .modal/.modal-bg existentes) ===
+.modal-backdrop { position: fixed; inset: 0; background: rgba(20, 15, 12, 0.45); z-index: 60; }
+.modal-dialog { width: 540px; max-width: 96%; margin: auto; }
+.modal-dialog.modal-sm { width: 420px; }
+.modal-dialog.modal-lg { width: 720px; }
+.modal-dialog.modal-xl { width: 960px; }
+.modal-content { background: var(--color-surface); border-radius: 14px; box-shadow: var(--shadow-lg); overflow: hidden; }
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--color-border); }
+.modal-title { margin: 0; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.modal-body { padding: 18px 20px; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 9px; padding: 14px 20px; border-top: 1px solid var(--color-border); }

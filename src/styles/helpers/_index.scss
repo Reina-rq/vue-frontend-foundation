@@ -1,0 +1,55 @@
+// Helpers: pequeñas utilidades compuestas (clearfix, ratio, stacks,
+// vertical rule, visually-hidden, stretched-link, text-truncate, icon-link, focus-ring,
+// colored links). Solo CSS, vía tokens.
+
+// Clearfix
+.clearfix::after { display: block; clear: both; content: ""; }
+
+// Ratio (cajas con relación de aspecto)
+.ratio { position: relative; width: 100%; }
+.ratio::before { display: block; padding-top: var(--aspect-ratio, 100%); content: ""; }
+.ratio > * { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.ratio-1x1 { --aspect-ratio: 100%; }
+.ratio-4x3 { --aspect-ratio: 75%; }
+.ratio-16x9 { --aspect-ratio: 56.25%; }
+.ratio-21x9 { --aspect-ratio: 42.857143%; }
+
+// Stacks (vertical / horizontal)
+.vstack { display: flex; flex: 1 1 auto; flex-direction: column; align-self: stretch; }
+.hstack { display: flex; flex-direction: row; align-items: center; align-self: stretch; }
+
+// Vertical rule
+.vr { display: inline-block; align-self: stretch; width: 1px; min-height: 1em; background-color: currentColor; opacity: .25; }
+
+// Visually hidden (accesible pero invisible)
+.visually-hidden,
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important;
+  overflow: hidden !important; clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important; border: 0 !important;
+}
+
+// Stretched link (hace clicable toda la tarjeta contenedora .position-relative)
+.stretched-link::after { position: absolute; inset: 0; z-index: 1; content: ""; }
+
+// Text truncation
+.text-truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+// Icon link (enlace con icono alineado)
+.icon-link { display: inline-flex; gap: 6px; align-items: center; text-decoration: none; color: var(--color-primary); font-weight: 600; }
+.icon-link:hover { text-decoration: underline; }
+.icon-link .ic { width: 15px; height: 15px; }
+
+// Focus ring (anillo de foco manual)
+.focus-ring:focus { outline: 0; box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 35%, transparent); }
+
+// Colored links(.link-*; .link-danger ya existe en utilities/_index)
+.link-primary { color: var(--color-primary); text-decoration: none; cursor: pointer; }
+.link-secondary { color: var(--color-secondary); text-decoration: none; cursor: pointer; }
+.link-success { color: var(--color-success); text-decoration: none; cursor: pointer; }
+.link-warning { color: var(--color-warning); text-decoration: none; cursor: pointer; }
+.link-info { color: var(--color-info); text-decoration: none; cursor: pointer; }
+.link-primary:hover, .link-secondary:hover, .link-success:hover,
+.link-warning:hover, .link-info:hover { text-decoration: underline; }

@@ -1,0 +1,65 @@
+// Navbar horizontal superior + estructura principal — exacto del original.
+@use '../abstracts/flags' as *;
+@if $legacy {
+  .layout { display: flex; flex-direction: column; min-height: 100vh; }
+
+  .side {
+    width: 100%;
+    background: var(--color-surface);
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  .side-top { display: flex; align-items: center; gap: 10px; padding: 10px 22px; border-bottom: 1px solid var(--line); }
+  .top-actions { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+  // Una sola fila: en vez de envolver a 2 filas, los módulos hacen scroll horizontal.
+  // Scrollbar fina y temada (usa --line, que ya cambia en modo oscuro).
+  .side-nav { display: flex; align-items: center; gap: 6px; padding: 8px 18px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+  .side-nav::-webkit-scrollbar { height: 8px; }
+  .side-nav::-webkit-scrollbar-track { background: transparent; }
+  .side-nav::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
+  .side .logout { color: var(--danger-600); }
+
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); margin-right: 10px; }
+  .brand .brand-name { font-size: 17px; font-weight: 800; letter-spacing: 0.2px; }
+  .brand .mark { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; color: var(--ink); }
+  .brand .mark .ic { width: 19px; height: 19px; }
+  .brand .mark img { width: 100%; height: 100%; object-fit: cover; border-radius: 9px; }
+
+  .nav { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; font-size: 13px; cursor: pointer; border-radius: 9px; color: var(--slate-600); font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+  .nav:hover { background: var(--bg); }
+  .nav.on { background: var(--primary); color: var(--color-on-primary); font-weight: 700; }
+  .nav .bdg { margin-left: 4px; background: var(--danger-500); color: var(--white); font-size: 10px; border-radius: 9px; padding: 1px 6px; font-weight: 700; }
+
+  .bell { width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; color: var(--color-muted); position: relative; cursor: pointer; }
+  .bell .ic { width: 21px; height: 21px; }
+  .bell .dot { position: absolute; top: -2px; right: -2px; width: 7px; height: 7px; border-radius: 50%; background: var(--danger-500); }
+
+  .usr { width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: var(--color-on-primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; cursor: pointer; overflow: hidden; }
+  .usr img { width: 100%; height: 100%; object-fit: cover; }
+  .usrwrap { position: relative; }
+  .usrmenu { position: absolute; right: 0; top: 42px; background: var(--color-surface); border: 1px solid var(--line); border-radius: 11px; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14); min-width: 170px; padding: 6px; display: none; z-index: 50; }
+  .usrmenu.on { display: block; }
+  .usrmenu .uhead { padding: 8px 11px; border-bottom: 1px solid var(--line); margin-bottom: 5px; }
+  .usrmenu .uhead b { font-size: 13px; }
+  .usrmenu .uhead small { display: block; color: var(--gray-400); font-size: 11px; }
+  .usritem { display: flex; align-items: center; gap: 10px; padding: 9px 11px; font-size: 13px; border-radius: 7px; cursor: pointer; color: var(--gray-700); }
+  .usritem:hover { background: var(--bg); }
+  .usritem .ic { width: 16px; height: 16px; color: var(--color-muted); }
+  .usrlic { color: var(--color-muted); }
+
+  .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .top { display: flex; align-items: center; gap: 12px; padding: 14px 20px 0; background: transparent; }
+  .top .ttl { font-weight: 800; font-size: 18px; }
+  .body { padding: 20px; overflow: auto; }
+
+  .appftr { margin-top: auto; padding: 14px 22px; border-top: 1px solid var(--line); font-size: 12px; color: var(--slate-400); text-align: right; background: var(--color-surface); }
+
+  .ent { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--gray-600); background: var(--bg); border: 1px solid var(--line); padding: 6px 11px; border-radius: 9px; cursor: pointer; }
+  .ent .ic { width: 15px; height: 15px; }
+}

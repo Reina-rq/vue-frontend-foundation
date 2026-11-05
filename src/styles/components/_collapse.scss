@@ -1,0 +1,7 @@
+// Collapse. Toggle de visibilidad con transición de altura (vía JS que
+// alterna la clase .show; ver la guía).
+.collapse { display: none; }
+.collapse.show { display: block; }
+.collapse-anim { display: block; overflow: hidden; max-height: 0; transition: max-height .25s ease; }
+.collapse-anim.show { max-height: 400px; }
+.collapse-horizontal { width: auto; }

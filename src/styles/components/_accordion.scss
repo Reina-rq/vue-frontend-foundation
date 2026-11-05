@@ -1,0 +1,32 @@
+// Accordion. Abrir/cerrar se controla con la clase .show / .collapsed
+// (ver lógica JS en la guía). Animación de altura simple vía max-height.
+.accordion { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; }
+.accordion-item + .accordion-item { border-top: 1px solid var(--color-border); }
+.accordion-header { margin: 0; }
+.accordion-button {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 13px; font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+.accordion-button:hover { background: var(--color-background); }
+.accordion-button:not(.collapsed) { background: var(--primary-50); color: var(--color-primary); }
+body.dark .accordion-button:not(.collapsed) { background: var(--dark-primary-soft); color: var(--primary); }
+.accordion-button::after {
+  content: "";
+  width: 9px; height: 9px;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform .2s;
+  flex: none; margin-left: 10px;
+}
+.accordion-button:not(.collapsed)::after { transform: rotate(-135deg); }
+.accordion-collapse { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+.accordion-collapse.show { max-height: 500px; }
+.accordion-body { padding: 12px 14px; font-size: 13px; color: var(--color-text); }

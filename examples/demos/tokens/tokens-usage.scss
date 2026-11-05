@@ -1,0 +1,4 @@
+/* Consumir siempre vía variable, nunca hex */
+background: var(--color-primary);
+color: var(--color-text);
+border: 1px solid var(--color-border);

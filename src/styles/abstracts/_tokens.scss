@@ -1,0 +1,17 @@
+// Design tokens a nivel SCSS (espaciado, radios) que no dependen del tema.
+// Los colores NO viven aquí: son CSS Variables en themes/ para poder cambiarlos en runtime.
+@use 'sass:map';
+
+$space: (
+  0: 0,
+  1: 4px,
+  2: 8px,
+  3: 12px,
+  4: 16px,
+  5: 24px,
+  6: 32px,
+);
+
+@function space($key) {
+  @return map.get($space, $key);
+}

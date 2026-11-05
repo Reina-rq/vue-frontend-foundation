@@ -1,0 +1,17 @@
+// Línea de tiempo.
+
+// === Timeline simple (bitácora de eventos) ===
+.timeline { padding-left: 4px; }
+.timeline-item { position: relative; border-left: 2px solid var(--line); margin-left: 5px; padding: 0 0 15px 16px; }
+.timeline-item:last-child { border-left-color: transparent; }
+.timeline-item::before { content: ""; position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--line); }
+.timeline-item--danger::before { background: var(--danger-600); }
+.timeline-item--success::before { background: var(--success-700); }
+.timeline-item--disabled { opacity: 0.5; }
+.timeline-item--disabled .timeline-title { text-decoration: line-through; }
+.timeline-title { font-weight: 700; font-size: 12.5px; }
+.timeline-meta { font-size: 11.5px; color: var(--color-muted); margin-top: 2px; }
+.timeline-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.timeline-actions { display: inline-flex; gap: 2px; flex-shrink: 0; }
+.timeline-distance { font-size: 12.5px; color: var(--gray-600); margin-top: 8px; }
+.timeline-distance b { color: var(--primary); }

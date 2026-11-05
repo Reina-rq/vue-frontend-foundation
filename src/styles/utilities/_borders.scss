@@ -1,0 +1,24 @@
+// Bordes y radios (vía tokens).
+.border { border: 1px solid var(--color-border); }
+.border-0 { border: 0; }
+.border-top { border-top: 1px solid var(--color-border); }
+.border-end { border-right: 1px solid var(--color-border); }
+.border-bottom { border-bottom: 1px solid var(--color-border); }
+.border-start { border-left: 1px solid var(--color-border); }
+.border-dashed { border: 1px dashed var(--color-border); }
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-success { border-color: var(--color-success); }
+.border-danger { border-color: var(--color-danger); }
+.border-warning { border-color: var(--color-warning); }
+.border-info { border-color: var(--color-info); }
+.border-light { border-color: var(--color-light); }
+.border-dark { border-color: var(--color-dark); }
+
+.rounded { border-radius: var(--radius-md); }
+.rounded-0 { border-radius: 0; }
+.rounded-1 { border-radius: var(--radius-sm); }
+.rounded-2 { border-radius: var(--radius-md); }
+.rounded-3 { border-radius: var(--radius-lg); }
+.rounded-circle { border-radius: 50%; }
+.rounded-pill { border-radius: 50rem; }

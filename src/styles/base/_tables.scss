@@ -1,0 +1,25 @@
+// Tablas globales.
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+th { text-align: left; color: var(--color-muted); font-weight: 600; font-size: 11px; padding: 6px; border-bottom: 1px solid var(--line); }
+td { padding: 9px 6px; border-bottom: 1px solid var(--line-soft); }
+tr:last-child td { border-bottom: 0; }
+// Celda de estado vacío / cargando (centrada).
+.table-empty { text-align: center; }
+// Cabeceras de tabla con color (fila <tr>).
+.table-head-primary { background: var(--primary); color: var(--color-on-primary); }
+.table-head-warning-soft { background: var(--peach-100); }
+// El texto de las cabeceras de color debe ser oscuro y legible (el th por defecto es gris).
+.table-head-primary th { color: var(--color-on-primary); }
+.table-head-warning-soft th { color: var(--ink); }
+
+// === Tabla (reproduce el look base) ===
+.table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.table th { text-align: left; color: var(--color-muted); font-weight: 600; font-size: 11px; padding: 6px; border-bottom: 1px solid var(--color-border); }
+.table td { padding: 9px 6px; border-bottom: 1px solid var(--line-soft); }
+.table-sm th, .table-sm td { padding: 4px 6px; }
+.table-bordered th, .table-bordered td { border: 1px solid var(--color-border); }
+.table-borderless th, .table-borderless td { border: 0; }
+.table-striped tbody tr:nth-of-type(odd) { background: var(--color-background); }
+.table-hover tbody tr:hover { background: var(--color-background); }
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.align-middle, .align-middle td, .align-middle th { vertical-align: middle; }

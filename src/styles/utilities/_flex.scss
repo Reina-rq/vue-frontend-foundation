@@ -1,0 +1,24 @@
+// Flex utilities.
+.flex-row { flex-direction: row; }
+.flex-row-reverse { flex-direction: row-reverse; }
+.flex-column { flex-direction: column; }
+.flex-column-reverse { flex-direction: column-reverse; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse; }
+.flex-fill { flex: 1 1 auto; }
+.flex-grow-0 { flex-grow: 0; }
+.flex-grow-1 { flex-grow: 1; }
+.flex-shrink-0 { flex-shrink: 0; }
+.flex-shrink-1 { flex-shrink: 1; }
+
+$justify: ('start': flex-start, 'end': flex-end, 'center': center, 'between': space-between, 'around': space-around, 'evenly': space-evenly);
+@each $name, $val in $justify {
+  .justify-content-#{$name} { justify-content: $val; }
+}
+
+$align: ('start': flex-start, 'end': flex-end, 'center': center, 'baseline': baseline, 'stretch': stretch);
+@each $name, $val in $align {
+  .align-items-#{$name} { align-items: $val; }
+  .align-self-#{$name} { align-self: $val; }
+}

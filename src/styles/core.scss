@@ -1,0 +1,7 @@
+// Punto de entrada "núcleo": el sistema (tokens, temas, base, grid, helpers,
+// utilidades y componentes con nombres genéricos) SIN los patrones propios marcados como
+// legacy (navbar de la app, .sec, .kpi, .ledger, .tabs/.tab, .act…).
+// Usar en proyectos nuevos: import '@styles/core.scss'
+// Para la salida completa (incluye legacy) usar main.scss.
+@use 'abstracts/flags' with ($legacy: false);
+@use 'main';

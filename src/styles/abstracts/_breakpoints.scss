@@ -1,0 +1,22 @@
+// Breakpoints y mixin de media query. No emite CSS.
+@use 'sass:map';
+
+// Breakpoints alineados al sistema de grid.
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+);
+
+@mixin bp($name) {
+  $value: map.get($breakpoints, $name);
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$name}` no existe.";
+  }
+}

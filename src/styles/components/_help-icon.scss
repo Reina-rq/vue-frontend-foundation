@@ -1,0 +1,47 @@
+// Ícono de ayuda (ⓘ) con burbuja: aparece al pasar el mouse y también al hacer clic (.is-open).
+.help-icon { position: relative; display: inline-flex; align-items: center; color: var(--color-danger); cursor: pointer; }
+.help-icon .ic { width: 14px; height: 14px; color: var(--color-danger); }
+.help-bubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 240px;
+  padding: 7px 10px;
+  background: var(--ink-panel);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .15s;
+  pointer-events: none;
+  z-index: 1080;
+}
+.help-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--ink-panel);
+}
+.help-icon:hover .help-bubble,
+.help-icon.is-open .help-bubble { opacity: 1; visibility: visible; }
+
+// Anclaje para que la burbuja no se corte con el borde de la pantalla.
+.help-icon.help-start .help-bubble { left: 0; right: auto; transform: none; }
+.help-icon.help-start .help-bubble::after { left: 12px; right: auto; transform: none; }
+.help-icon.help-end .help-bubble { left: auto; right: 0; transform: none; }
+.help-icon.help-end .help-bubble::after { left: auto; right: 12px; transform: none; }
+
+// Dirección hacia abajo (para íconos pegados al borde superior).
+.help-icon.help-down .help-bubble { top: calc(100% + 8px); bottom: auto; }
+.help-icon.help-down .help-bubble::after { top: auto; bottom: 100%; border-top-color: transparent; border-bottom-color: var(--ink-panel); }

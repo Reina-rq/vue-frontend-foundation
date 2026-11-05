@@ -1,0 +1,7 @@
+// Breadcrumb.
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; font-size: 13px; }
+.breadcrumb-item { display: flex; align-items: center; color: var(--color-muted); }
+.breadcrumb-item + .breadcrumb-item::before { content: "/"; padding-right: 6px; color: var(--color-muted); }
+.breadcrumb-item a { color: var(--color-primary); text-decoration: none; }
+.breadcrumb-item a:hover { text-decoration: underline; }
+.breadcrumb-item.active { color: var(--color-text); font-weight: 600; }

@@ -1,0 +1,21 @@
+// Tarjetas y secciones. (El layout en columnas usa el grid global `.row`/`.col-*`.)
+@use '../abstracts/flags' as *;
+.card { background: var(--color-surface); border: 1px solid var(--line); border-radius: 12px; padding: 15px; }
+// Card sin padding (la tabla/lista llega al borde). Combinar con .overflow-hidden.
+.card-flush { padding: 0; }
+.card h3 { margin: 0 0 11px; font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
+.card h3 .ic { width: 16px; height: 16px; color: var(--primary); }
+@if $legacy {
+  .sec { background: var(--color-surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+  .sec > .st { margin: 0 0 14px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+  .sec > .st .ic { width: 16px; height: 16px; color: var(--primary); }
+}
+
+// === Sub-componentes (componen con `.card`) ===
+.card-body { padding: 15px; }
+.card-header { padding: 12px 15px; border-bottom: 1px solid var(--color-border); font-weight: 700; font-size: 13.5px; display: flex; align-items: center; gap: 8px; }
+.card-footer { padding: 12px 15px; border-top: 1px solid var(--color-border); }
+.card-title { margin: 0 0 8px; font-size: 13.5px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.card-title .ic { width: 16px; height: 16px; color: var(--color-primary); }
+.card-subtitle { color: var(--color-muted); font-size: 12px; margin: 0 0 8px; }
+.card-text { font-size: 13px; color: var(--color-text); }

@@ -1,0 +1,17 @@
+// Alerts (vía tokens). Look acorde al sistema (suave, con borde).
+.alert {
+  position: relative;
+  padding: 11px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.alert-primary { background: var(--primary-50); border-color: var(--primary-200); color: var(--primary-900); }
+.alert-secondary { background: var(--slate-100); border-color: var(--slate-200); color: var(--slate-600); }
+.alert-success { background: var(--success-100); border-color: var(--success-200); color: var(--success-700); }
+.alert-danger { background: var(--danger-100); border-color: var(--danger-200); color: var(--danger-700); }
+.alert-warning { background: var(--warning-100); border-color: var(--warning-200); color: var(--warning-700); }
+.alert-info { background: var(--info-100); border-color: var(--info-200); color: var(--info-700); }
+.alert-light { background: var(--slate-50); border-color: var(--border-light); color: var(--slate-600); }
+.alert-dark { background: var(--gray-200); border-color: var(--gray-300); color: var(--ink-panel); }

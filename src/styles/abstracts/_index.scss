@@ -1,0 +1,6 @@
+// Forward de abstracts. Este archivo se inyecta en cada <style lang="scss"> vía vite.config.
+// IMPORTANTE: solo debe contener cosas que NO emitan CSS (variables, funciones, mixins),
+// para no duplicar reglas en cada componente.
+@forward 'tokens';
+@forward 'mixins';
+@forward 'breakpoints';

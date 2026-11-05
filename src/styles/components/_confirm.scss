@@ -1,0 +1,13 @@
+// Confirmación destructiva (banner rojo + pregunta + nota + acciones).
+// Dentro de un .modal con padding normal: .confirm-banner sangra hasta el borde.
+// En un modal dedicado (.modal.modal-confirm, sin padding) el banner va a sangre y el
+// cuerpo pone su propio padding. Lo usa <AnularModal>.
+.confirm-banner { margin: -24px -24px 0; background: var(--danger-500); color: var(--white); font-weight: 800; padding: 12px 16px; font-size: 15px; }
+.confirm-body { padding: 20px 0 0; text-align: center; }
+.confirm-question { font-size: 14px; }
+.confirm-note { font-size: 12.5px; color: var(--danger-600); margin-top: 6px; }
+.confirm-actions { display: flex; gap: 12px; justify-content: center; margin-top: 18px; }
+
+.modal.modal-confirm { max-width: 420px; padding: 0; overflow: hidden; }
+.modal-confirm .confirm-banner { margin: 0; }
+.modal-confirm .confirm-body { padding: 20px 18px; }

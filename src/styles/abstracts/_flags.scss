@@ -1,0 +1,4 @@
+// Banderas de compilación. No emite CSS.
+// $legacy: incluye las clases de patrones propios (no genéricos).
+// main.scss lo deja en true (salida completa); core.scss lo pone en false.
+$legacy: true !default;

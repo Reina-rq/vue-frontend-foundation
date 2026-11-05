@@ -1,0 +1,18 @@
+// Editor de texto enriquecido (barra de formato + área editable). Componente global genérico.
+.rte { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--color-surface); }
+.rte-bar { display: flex; gap: 4px; padding: 6px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.rte-bar button { min-width: 30px; height: 28px; border: 1px solid var(--line); border-radius: 6px; background: var(--color-surface); color: var(--gray-700); font-size: 12.5px; cursor: pointer; padding: 0 8px; }
+.rte-bar button:hover { background: var(--bg); border-color: var(--primary); }
+.rte-area { min-height: 90px; padding: 9px 11px; font-size: 13px; color: var(--color-text); outline: none; }
+.rte-area:empty::before { content: attr(data-placeholder); color: var(--gray-400); }
+// El reset global quita padding/list-style a las listas; aquí se restauran para que se
+// vean las viñetas/números dentro del editor (insertUnorderedList / insertOrderedList).
+.rte-area ul { list-style: disc; padding-left: 1.5em; margin: 4px 0; }
+.rte-area ol { list-style: decimal; padding-left: 1.5em; margin: 4px 0; }
+.rte-area li { margin: 2px 0; }
+.rte-sep { width: 1px; background: var(--line); margin: 2px 3px; }
+// Solo lectura (sin barra): tono apagado y sin placeholder.
+.rte.disabled .rte-area { background: var(--bg); color: var(--color-muted); }
+.rte.disabled .rte-area:empty::before { content: ''; }
+body.dark .rte, body.dark .rte-area { background: var(--dark-input-bg); color: var(--gray-200); }
+body.dark .rte-bar button { background: var(--dark-input-bg); color: var(--slate-300); }

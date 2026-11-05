@@ -1,0 +1,6 @@
+// Barra de herramientas de sección.
+@use '../abstracts/flags' as *;
+@if $legacy {
+  .toolbar { padding: 10px 14px; }
+  .toolbar-soft { background: var(--surface-soft); }
+}

@@ -1,0 +1,122 @@
+// Modo oscuro (body.dark). Base del original; primario y estados adaptados a la paleta de marca.
+@use '../abstracts/flags' as *;
+body.dark {
+  --bg: #0f141a;
+  --line: #2a323c;
+  // Tokens semánticos en oscuro (los que cambian de superficie/texto).
+  --color-background: #0f141a;
+  --color-surface: #161d25;
+  --color-border: #2a323c;
+  --color-text: #e5e7eb;
+  --color-muted: #9aa3af;
+  --color-light: #161d25;
+  --color-dark: #e5e7eb;
+  // Fila seleccionada: tinte ámbar translúcido en vez del crema claro (evita el bloque "chillón").
+  --row-selected: rgba(233, 216, 166, 0.12);
+  // Primario más claro sobre superficies oscuras (contraste) y texto oscuro encima.
+  --primary: var(--brand-teal);
+  --primary-2: var(--brand-mint);
+  --color-on-primary: var(--brand-ink);
+  --primary-50: #0b2a31;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-2);
+  // Rojo más claro para que el texto de error se lea sobre superficies oscuras.
+  --color-danger: #e2786c;
+  background: #0f141a;
+  color: #e5e7eb;
+}
+@if $legacy {
+  body.dark .side,
+  body.dark .side-top,
+  body.dark .side-nav { background: #161d25; border-color: #2a323c; }
+  body.dark .brand .brand-name { color: #e5e7eb; }
+}
+body.dark .card,
+body.dark .sec,
+body.dark .kpi,
+body.dark .modal { background: #161d25; border-color: #2a323c; color: #e5e7eb; }
+@if $legacy {
+  body.dark .appftr { background: #161d25; border-color: #2a323c; color: #9aa3af; }
+  body.dark .nav { color: #cbd5e1; }
+  body.dark .nav:hover { background: #222b35; }
+  body.dark .nav.on { background: var(--primary); color: var(--color-on-primary); }
+}
+body.dark th { color: #9aa3af; border-color: #2a323c; }
+body.dark td { border-color: #222b35; }
+body.dark .form-label { color: #cbd5e1; }
+@if $legacy {
+  body.dark .sec table input,
+  body.dark .sec table select,
+  body.dark .sec textarea { background: #0f141a; color: #e5e7eb; border-color: #2a323c; }
+  body.dark .lsearch { background: #0f141a; border-color: #2a323c; }
+  body.dark .lsearch input { background: transparent; color: #e5e7eb; }
+  body.dark .usrmenu { background: #161d25; border-color: #2a323c; color: #e5e7eb; }
+  body.dark .usrmenu .uhead b { color: #e5e7eb; }
+  body.dark .usritem { color: #cbd5e1; }
+  body.dark .usritem .ic { color: #9aa3af; }
+  body.dark .usritem:hover { background: #222b35; }
+  body.dark .tab:not(.on) { color: #cbd5e1; }
+  body.dark .segbtn:not(.on) { background: #0f141a; color: #cbd5e1; border-color: #2a323c; }
+  body.dark .note { color: #9aa3af; }
+}
+body.dark .btn-outline-secondary { background: #0f141a; color: #e5e7eb; border-color: #2a323c; }
+@if $legacy {
+  body.dark .top .ttl { color: #e5e7eb; }
+}
+// Genéricos (cubren los controles/superficies de las clases nuevas en modo oscuro).
+body.dark input,
+body.dark select,
+body.dark textarea { background: #0f141a; color: #e5e7eb; border-color: #2a323c; }
+// Multiselect propio (.msel es un <div>, no lo cubre la regla de input/select).
+body.dark .msel-field { background: #0f141a; border-color: #2a323c; }
+body.dark .msel-field .msel-lbl { color: #e5e7eb; }
+body.dark .msel-pop { background: #161d25; border-color: #2a323c; }
+body.dark .msel-pop label:hover { background: #0f141a; }
+body.dark .card h3,
+body.dark .sec > .st,
+body.dark .modal h3 { color: #e5e7eb; }
+@if $legacy {
+  body.dark .lk { color: var(--primary); }
+  // Texto que era oscuro (#1a1a18/#374151/#111827) y debe verse en superficies oscuras.
+  body.dark .usrlic { color: #9aa3af; }
+}
+body.dark .text-ink { color: #e5e7eb; }
+body.dark .text-slate { color: #cbd5e1; }
+@if $legacy {
+  body.dark .subhead { color: #e5e7eb; }
+}
+// Labels/spans de componentes con texto oscuro fijo → claros en modo oscuro.
+body.dark .dlbl,
+body.dark .calendar-daynum,
+body.dark .timeline-distance,
+body.dark .pgpage,
+body.dark .toast-title { color: #e5e7eb; }
+// Labels atenuados (muted) → gris claro legible.
+body.dark .calendar-dow,
+body.dark .calendar-more{ color: #9aa3af; }
+@if $legacy {
+  // Botones de paginación (superficie + texto) en oscuro.
+  body.dark .pgbtn { background: #0f141a; color: #e5e7eb; border-color: #2a323c; }
+}
+
+// === Estados, badges y fondos suaves en modo oscuro ===
+// En claro usan pastel claro (#fef3c7, #fee2e2, #dbeafe…) con texto fuerte; sobre las
+// superficies oscuras esos bloques se ven "chillones". Aquí pasan a un tinte oscuro
+// translúcido del mismo tono, con texto claro y legible. El primary se mantiene igual.
+body.dark .badge-success { background: rgba(10, 147, 150, 0.18); color: var(--brand-mint); }
+body.dark .badge-danger { background: rgba(174, 32, 18, 0.22); color: #e2786c; }
+body.dark .badge-warning { background: rgba(238, 155, 0, 0.16); color: var(--brand-amber); }
+body.dark .badge-info { background: rgba(10, 147, 150, 0.14); color: #6fc3c5; }
+body.dark .badge-light { background: #222b35; color: #cbd5e1; }
+body.dark .badge-dark { background: #2a323c; color: #e5e7eb; }
+
+// Fondos pastel genéricos (swatches/avatares/realces suaves) → tinte oscuro del mismo tono.
+body.dark .bg-success-subtle { background-color: rgba(10, 147, 150, 0.18); }
+body.dark .bg-blue-100 { background-color: rgba(0, 95, 115, 0.3); }
+body.dark .bg-sky-100 { background-color: rgba(56, 189, 248, 0.16); }
+body.dark .bg-amber-100 { background-color: rgba(238, 155, 0, 0.16); }
+body.dark .bg-red-100 { background-color: rgba(174, 32, 18, 0.22); }
+body.dark .bg-violet-100 { background-color: rgba(139, 92, 246, 0.16); }
+body.dark .bg-slate-100 { background-color: #1b222b; }
+body.dark .bg-slate-200 { background-color: #222b35; }
+body.dark .bg-slate-300 { background-color: #2a323c; }

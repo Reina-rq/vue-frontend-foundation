@@ -1,0 +1,137 @@
+// Grupos de utilidades (cada partial emite su propio CSS).
+@use '../abstracts/flags' as *;
+@forward 'display';
+@forward 'flex';
+@forward 'spacing';
+@forward 'sizing';
+@forward 'typography';
+@forward 'colors';
+@forward 'borders';
+@forward 'position';
+@forward 'extras';
+
+@if $legacy {
+  // Utilidades atómicas y helpers heredados del proyecto (conviven con las anteriores).
+  .view { display: none; }
+  .view.on { display: block; }
+  .seg { display: none; }
+  .seg.on { display: block; }
+  .grp { display: none; }
+  .muted { color: var(--color-muted); font-size: 12px; }
+  .lk { color: var(--primary); font-weight: 600; cursor: pointer; }
+}
+// Links de color (.link-*).
+.link-danger { color: var(--color-danger); font-weight: 600; text-decoration: none; cursor: pointer; }
+.link-danger:hover { text-decoration: underline; }
+@if $legacy {
+  .lowstk { color: var(--danger-600); font-weight: 700; }
+  .ghelp, .ghelp .ic { color: var(--danger-600) !important; stroke: var(--danger-600) !important; }
+  .ph { text-align: center; padding: 54px 20px; }
+  .ph .ic { width: 40px; height: 40px; color: var(--slate-300); }
+}
+
+// --- Utilidades atómicas (set finito; reemplazan los style="" inline más comunes) ---
+// Flex / layout
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-none { flex: none; }
+.min-w-0 { min-width: 0; }
+.cursor-pointer { cursor: pointer; }
+.cursor-help { cursor: help; }
+.pe-none { pointer-events: none; }
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.inset-0 { inset: 0; }
+.object-cover { object-fit: cover; }
+.object-contain { object-fit: contain; }
+.pe-36 { padding-right: 36px; }
+.font-inherit { font-family: inherit; }
+.bg-soft { background: var(--bg); }
+
+// Gaps px del proyecto (convivencia). Los gap-0..5 (rem) viven en utilities/_spacing.
+.gap-6 { gap: 6px; }
+.gap-8 { gap: 8px; }
+.gap-9 { gap: 9px; }
+.gap-10 { gap: 10px; }
+.gap-12 { gap: 12px; }
+.gap-14 { gap: 14px; }
+.gap-16 { gap: 16px; }
+.gap-18 { gap: 18px; }
+.gap-24 { gap: 24px; }
+
+// Márgenes px del proyecto (convivencia). Los m*-0..5 (rem) viven en utilities/_spacing.
+.mt-6 { margin-top: 6px; }
+.mt-8 { margin-top: 8px; }
+.mt-10 { margin-top: 10px; }
+.mt-11 { margin-top: 11px; }
+.mt-12 { margin-top: 12px; }
+.mt-13 { margin-top: 13px; }
+.mt-14 { margin-top: 14px; }
+.mt-16 { margin-top: 16px; }
+.mt-18 { margin-top: 18px; }
+.mt-22 { margin-top: 22px; }
+.mb-18 { margin-bottom: 18px; }
+.mb-6 { margin-bottom: 6px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-11 { margin-bottom: 11px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-14 { margin-bottom: 14px; }
+
+// === Iconos: helpers de tamaño y color ===
+// Se aplican sobre el icono base `.ic` (componente <Icon />): <Icon class="icon-md icon-muted" />
+.icon-sm { width: 14px; height: 14px; }
+.icon-md { width: 16px; height: 16px; }
+.icon-lg { width: 20px; height: 20px; }
+.icon-xl { width: 24px; height: 24px; }
+// Tamaños exactos del diseño (cuando se necesita un px específico).
+.icon-13 { width: 13px; height: 13px; }
+.icon-14 { width: 14px; height: 14px; }
+.icon-15 { width: 15px; height: 15px; }
+.icon-16 { width: 16px; height: 16px; }
+.icon-18 { width: 18px; height: 18px; }
+.icon-34 { width: 34px; height: 34px; }
+// Flecha SVG inline (deltas de KPI): trazo redondeado de 13px.
+.icon-arrow { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+// Colores (vía tokens).
+.icon-primary { color: var(--color-primary); }
+.icon-muted { color: var(--color-muted); }
+.icon-success { color: var(--color-success); }
+.icon-danger { color: var(--color-danger); }
+.icon-warning { color: var(--color-warning); }
+.icon-info { color: var(--color-info); }
+
+// Padding px (unifican *-pad-12/14/16/18/20, *-td-empty). Anchos w-* viven en _sizing.
+.pt-11 { padding-top: 11px; }
+.p-6 { padding: 6px; }
+.p-10 { padding: 10px; }
+.p-12 { padding: 12px; }
+.p-14 { padding: 14px; }
+.p-16 { padding: 16px; }
+.p-18 { padding: 18px; }
+.p-20 { padding: 20px; }
+
+// Tipografía
+.fs-10 { font-size: 10px; }
+.fs-105 { font-size: 10.5px; }
+.fs-11 { font-size: 11px; }
+.fs-115 { font-size: 11.5px; }
+.fs-12 { font-size: 12px; }
+.fs-125 { font-size: 12.5px; }
+.fs-13 { font-size: 13px; }
+.fs-14 { font-size: 14px; }
+.fs-15 { font-size: 15px; }
+.fs-16 { font-size: 16px; }
+.fs-17 { font-size: 17px; }
+.fs-18 { font-size: 18px; }
+.fs-20 { font-size: 20px; }
+.fs-22 { font-size: 22px; }
+.fs-30 { font-size: 30px; }
+.fw-600 { font-weight: 600; }
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+
+// Colores de texto frecuentes
+
+// El grid de 12 columnas vive ahora en `grid/_index.scss` (sistema
+// con breakpoints, gutters y offsets). Se carga desde main.scss.

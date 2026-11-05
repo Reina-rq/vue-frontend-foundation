@@ -1,0 +1,76 @@
+// Listas con encabezado, filas con valor alineado a la derecha y tarjetas de resumen.
+@use '../abstracts/flags' as *;
+@if $legacy {
+  .ledger { display: flex; flex-direction: column; gap: 0; }
+  .ledger + .ledger { margin-top: 12px; }
+  .ledger-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--peach-100);
+    padding: 9px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .ledger-head--success {
+    justify-content: flex-end;
+    background: var(--success-100);
+    color: var(--color-success);
+  }
+  .ledger-head-meta { display: inline-flex; align-items: center; gap: 16px; color: var(--slate-600); }
+  .ledger-head-cols { display: inline-flex; gap: 60px; color: var(--slate-600); }
+  .ledger-add {
+    width: 24px;
+    height: 24px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--add-green);
+    color: var(--white);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    flex: none;
+  }
+  .ledger-add:disabled { opacity: .45; cursor: not-allowed; }
+  .ledger-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 12.5px;
+  }
+  .ledger-row--income { padding: 10px 14px; font-size: 13px; }
+  .ledger-row.is-cancelled { text-decoration: line-through; color: var(--slate-400); }
+  .ledger-main { display: inline-flex; align-items: center; gap: 4px; min-width: 0; }
+  .ledger-actions { display: inline-flex; align-items: center; gap: 2px; margin-right: 4px; flex: none; }
+  .ledger-actions .act { width: 24px; height: 24px; }
+  .ledger-actions .act.off { opacity: .4; cursor: not-allowed; pointer-events: none; }
+  .ledger-amount { display: inline-flex; align-items: center; gap: 50px; white-space: nowrap; }
+  .ledger-empty { text-align: center; padding: 11px; font-size: 12px; }
+  .ledger-footer-action { display: flex; justify-content: flex-end; margin: 10px 0 14px; }
+
+  .summary-strip { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+  .summary-card {
+    min-width: 130px;
+    padding: 10px 14px;
+    border-radius: 9px;
+  }
+  .summary-card--warning { background: var(--peach-100); }
+  .summary-card--success { background: var(--success-100); }
+  .summary-card--muted { background: var(--color-background); }
+  .summary-card-label { font-size: 11px; }
+  .summary-card--warning .summary-card-label { color: var(--warning-700); }
+  .summary-card--success .summary-card-label { color: var(--color-success); }
+  .summary-card--muted .summary-card-label { color: var(--slate-500); }
+  .summary-card-value { font-size: 16px; }
+
+  body.dark .ledger-head-meta,
+  body.dark .ledger-head-cols { color: var(--slate-300); }
+}

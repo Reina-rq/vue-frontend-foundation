@@ -1,0 +1,40 @@
+// Paginador, filas de lista y acciones de fila.
+@use '../abstracts/flags' as *;
+@if $legacy {
+  .pager { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; font-size: 12.5px; color: var(--color-muted); }
+  .pager .pgnav { display: inline-flex; align-items: center; gap: 6px; }
+  .pgbtn { min-width: 28px; height: 28px; border: 1px solid var(--line); background: var(--color-surface); border-radius: 7px; cursor: pointer; font-size: 15px; font-weight: 700; color: var(--gray-700); }
+  .pgbtn:hover { background: var(--bg); }
+  .pgpage { font-weight: 700; color: var(--gray-700); padding: 0 4px; }
+  .row2 { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); font-size: 12.5px; }
+  .row2:last-child { border-bottom: 0; }
+  .dotc { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+  .acts { display: inline-flex; gap: 3px; }
+  td .acts { justify-content: flex-end; }
+  td:first-child .acts { justify-content: flex-start; }
+  .act { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 0; background: none; border-radius: 7px; cursor: pointer; color: var(--color-muted); }
+  .act .ic { width: 15px; height: 15px; }
+  .act:hover { background: var(--bg); color: var(--primary); }
+  .act.danger:hover { color: var(--danger-600); }
+  .act.sm { width: 24px; height: 24px; }
+  .act.sm .ic { width: 13px; height: 13px; }
+  .act.off { opacity: 0.35; cursor: not-allowed; pointer-events: none; }
+  // El botón deshabilitado NO lleva pointer-events:none: así "se traga" el click (no lo dispara
+  // ni lo propaga a la fila). Con pointer-events:none el click caía en la fila y llamaba a la API.
+  .act:disabled { opacity: 0.35; cursor: not-allowed; }
+  .act:disabled:hover { background: none; color: var(--color-muted); }
+  .act.off { opacity: .4; cursor: not-allowed; pointer-events: none; }
+  .rm { color: var(--danger-600); cursor: pointer; font-weight: 700; font-size: 15px; display: inline-block; text-align: center; width: 100%; }
+}
+
+// === Pagination (look acorde a .pgbtn) ===
+.pagination { display: inline-flex; align-items: center; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.page-item { display: inline-flex; }
+.page-link {
+  min-width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--color-border); background: var(--color-surface); border-radius: 7px;
+  cursor: pointer; font-size: 13px; font-weight: 700; color: var(--color-text); padding: 0 8px;
+}
+.page-link:hover { background: var(--color-background); }
+.page-item.active .page-link { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); }
+.page-item.disabled .page-link { opacity: 0.5; pointer-events: none; }

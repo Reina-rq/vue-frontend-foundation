@@ -1,0 +1,27 @@
+// List group.
+.list-group { display: flex; flex-direction: column; border-radius: var(--radius-md); }
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.list-group-item + .list-group-item { border-top: 0; }
+.list-group-item:first-child { border-top-left-radius: inherit; border-top-right-radius: inherit; }
+.list-group-item:last-child { border-bottom-left-radius: inherit; border-bottom-right-radius: inherit; }
+.list-group-item.active { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-on-primary); font-weight: 600; }
+.list-group-item.disabled { color: var(--color-muted); pointer-events: none; background: var(--color-background); }
+a.list-group-item, button.list-group-item { width: 100%; text-align: left; cursor: pointer; font-family: inherit; }
+a.list-group-item:hover, button.list-group-item:hover { background: var(--color-background); }
+.list-group-flush { border-radius: 0; }
+.list-group-flush > .list-group-item { border-inline: 0; }
+.list-group-flush > .list-group-item:first-child { border-top: 0; }
+.list-group-flush > .list-group-item:last-child { border-bottom: 0; }
+// Variantes de color
+.list-group-item-success { background: var(--success-100); color: var(--success-700); }
+.list-group-item-danger { background: var(--danger-100); color: var(--danger-700); }
+.list-group-item-warning { background: var(--warning-100); color: var(--warning-800); }
+.list-group-item-info { background: var(--info-100); color: var(--info-700); }

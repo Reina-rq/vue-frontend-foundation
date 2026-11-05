@@ -1,0 +1,27 @@
+// Pestañas y segmentos.
+@use '../abstracts/flags' as *;
+@if $legacy {
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .tab { padding: 7px 12px; font-size: 12.5px; font-weight: 600; color: var(--color-muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab.on { color: var(--primary); border-bottom-color: var(--primary); }
+  .tab.tab-dis { opacity: 0.42; pointer-events: none; }
+  .tpane { display: none; }
+  .tpane.on { display: block; }
+  .segbtns { display: inline-flex; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+  .segbtn { padding: 7px 14px; font-size: 12.5px; font-weight: 600; background: var(--color-surface); border: 0; cursor: pointer; color: var(--color-muted); border-right: 1px solid var(--line); font-family: inherit; }
+  .segbtn:last-child { border-right: 0; }
+  .segbtn.on { background: var(--primary); color: var(--color-on-primary); }
+}
+
+// === Nav/Tabs (look de .tabs/.tab/.tpane; `.nav` lo usa el navbar) ===
+.nav-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--color-border); margin-bottom: 12px; list-style: none; padding: 0; }
+.nav-pills { display: flex; gap: 6px; list-style: none; padding: 0; }
+.nav-item { display: inline-flex; }
+.nav-tabs .nav-link { padding: 7px 12px; font-size: 12.5px; font-weight: 600; color: var(--color-muted); cursor: pointer; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; background: none; font-family: inherit; }
+.nav-tabs .nav-link.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+.nav-pills .nav-link { padding: 7px 12px; font-size: 12.5px; font-weight: 600; color: var(--color-muted); cursor: pointer; border-radius: 8px; background: none; border: 0; font-family: inherit; }
+.nav-pills .nav-link.active { background: var(--color-primary); color: var(--color-on-primary); }
+// Variante segmentada: pista gris de fondo para diferenciar las pestañas (segmented control).
+.nav-pills.boxed { display: inline-flex; gap: 4px; padding: 4px; background: var(--bg); border-radius: 10px; }
+.tab-content > .tab-pane { display: none; }
+.tab-content > .tab-pane.active { display: block; }

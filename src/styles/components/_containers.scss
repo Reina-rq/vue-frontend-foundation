@@ -1,0 +1,25 @@
+// Containers: ancho máximo centrado por breakpoint.
+@use 'sass:map';
+@use '../abstracts/breakpoints' as *;
+
+$container-max: ('sm': 540px, 'md': 720px, 'lg': 960px, 'xl': 1140px, 'xxl': 1320px);
+
+.container, .container-fluid,
+.container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 12px;
+}
+
+@each $name, $bp in $breakpoints {
+  @media (min-width: $bp) {
+    .container { max-width: map.get($container-max, $name); }
+  }
+}
+// container-{bp}: fluido hasta su breakpoint y luego fijo
+@each $name, $bp in $breakpoints {
+  .container-#{$name} { max-width: none; }
+  @media (min-width: $bp) {
+    .container-#{$name} { max-width: map.get($container-max, $name); }
+  }
+}

@@ -1,0 +1,22 @@
+// Popover (posicionado por JS que alterna .show).
+.popover {
+  position: absolute; z-index: 1070;
+  max-width: 276px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 13px;
+  display: none;
+}
+.popover.show { display: block; }
+.popover-header {
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 13px; font-weight: 700;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.popover-body { padding: 10px 12px; color: var(--color-text); }
+.popover-arrow { position: absolute; width: 12px; height: 6px; }

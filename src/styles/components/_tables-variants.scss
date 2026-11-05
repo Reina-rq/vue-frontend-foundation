@@ -1,0 +1,35 @@
+// Tablas (.table y variantes). El proyecto estiliza <table> "desnuda"
+// en base/_tables; estas clases dan las variantes opcionales sin tocar esa base.
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: var(--color-text);
+}
+.table th, .table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: middle;
+}
+.table thead th { font-weight: 700; font-size: 12px; color: var(--gray-700); }
+body.dark .table thead th { color: var(--slate-300); }
+
+.table-sm th, .table-sm td { padding: 5px 8px; }
+
+.table-bordered th, .table-bordered td { border: 1px solid var(--color-border); }
+
+.table-striped tbody tr:nth-of-type(odd) > * { background: var(--color-background); }
+
+.table-hover tbody tr:hover > * { background: var(--color-background); }
+
+.table-active > * { background: color-mix(in srgb, var(--color-primary) 12%, transparent); }
+
+// Variantes de fila por color (suave)
+.table-primary { background: var(--primary-50); }
+.table-success { background: var(--success-100); }
+.table-danger { background: var(--danger-100); }
+.table-warning { background: var(--warning-100); }
+.table-info { background: var(--info-100); }
+
+.table-responsive { overflow-x: auto; -webkit-overflow-scrolling: touch; }

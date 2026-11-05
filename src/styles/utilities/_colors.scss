@@ -1,0 +1,53 @@
+// Colores de texto y fondo (vía tokens semánticos).
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-success { color: var(--color-success); }
+.text-danger { color: var(--color-danger); }
+.text-warning { color: var(--color-warning); }
+.text-info { color: var(--color-info); }
+.text-light { color: var(--color-light); }
+.text-dark { color: var(--color-dark); }
+.text-muted { color: var(--color-muted); }
+.text-white { color: var(--color-white); }
+.text-body { color: var(--color-text); }
+// Tonos de texto del proyecto (sustituyen a .c-ink/.c-slate/.c-dim, mismo hex).
+.text-ink { color: var(--ink); }
+.text-slate { color: var(--gray-700); }
+.text-dim { color: var(--slate-400); }
+
+// Tonos fuertes usados en KPIs/estados del diseño.
+.text-danger-emphasis { color: var(--danger-700); }
+.text-warning-emphasis { color: var(--warning-700); }
+.text-info-emphasis { color: var(--info-600); }
+// Naranja de acción (enlaces "Ver plan", botones de adjunto/documento). Se repite en varios módulos.
+.text-orange { color: var(--orange-600); }
+// Fondos suaves para pills/estados.
+.bg-success-subtle { background-color: var(--success-100); }
+// Colores puntuales para swatches de leyenda y avatares (paleta tipo Tailwind, genéricos).
+.bg-slate-100 { background-color: var(--slate-100); }
+.bg-slate-200 { background-color: var(--slate-200); }
+.bg-slate-300 { background-color: var(--slate-300); }
+.bg-blue-100 { background-color: var(--info-100); }
+.bg-amber-100 { background-color: var(--warning-100); }
+.bg-red-100 { background-color: var(--danger-100); }
+.bg-violet-100 { background-color: var(--violet-100); }
+.bg-blue-700 { background-color: var(--info-700); }
+.bg-sky-100 { background-color: var(--sky-100); }
+.text-sky-700 { color: var(--sky-700); }
+.text-sky-400 { color: var(--sky-400); }
+.text-blue-700 { color: var(--info-700); }
+.text-slate-600 { color: var(--slate-600); }
+.text-violet-700 { color: var(--violet-700); }
+
+.bg-white { background-color: var(--color-white); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-success { background-color: var(--color-success); }
+.bg-danger { background-color: var(--color-danger); }
+.bg-warning { background-color: var(--color-warning); }
+.bg-info { background-color: var(--color-info); }
+.bg-light { background-color: var(--color-light); }
+.bg-dark { background-color: var(--color-dark); }
+.bg-body { background-color: var(--color-background); }
+.bg-white { background-color: var(--color-white); }
+.bg-transparent { background-color: transparent; }

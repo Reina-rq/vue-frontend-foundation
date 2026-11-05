@@ -1,0 +1,16 @@
+// Display (+ responsive). Breakpoints: sm576 md768 lg992 xl1200 xxl1400.
+@use 'sass:map';
+@use '../abstracts/breakpoints' as *;
+
+$displays: none, inline, inline-block, block, grid, inline-grid, table, table-row, table-cell, flex, inline-flex;
+
+@each $d in $displays {
+  .d-#{$d} { display: $d; }
+}
+@each $name, $bp in $breakpoints {
+  @media (min-width: $bp) {
+    @each $d in $displays {
+      .d-#{$name}-#{$d} { display: $d; }
+    }
+  }
+}
